@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AIを使った日常生活改善ツールを作っています。家計管理・学習支援・投資分析など、自分が本当に使いたいアプリを個人開発中。">
   <title>lifebit — AIで、毎日をちょっとラクに</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,21 +18,13 @@
   <header class="site-header">
     <nav class="nav container">
       <a class="nav__logo" href="#top">lifebit</a>
-
-      <button
-        class="nav__toggle"
-        id="nav-toggle"
-        aria-label="メニューを開く"
-        aria-expanded="false"
-        aria-controls="nav-links"
-      >
+      <button class="nav__toggle" id="nav-toggle"
+        aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links">
         <span class="hamburger"></span>
       </button>
-
       <ul class="nav__links" id="nav-links" role="list">
         <li><a class="nav__link" href="#about">About</a></li>
         <li><a class="nav__link" href="#projects">Projects</a></li>
-        <li><a class="nav__link" href="#comments">Comments</a></li>
         <li><a class="nav__link" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -48,16 +37,9 @@
          ================================================ -->
     <section class="hero" id="top">
       <div class="hero__inner container">
-
-        <!-- プロフィール画像 -->
-        <!-- images/profile.jpg を置くだけで自動表示。なければグラデーションアイコンを表示。 -->
         <div class="hero__avatar" aria-hidden="true">
-          <img
-            class="avatar__img"
-            src="images/profile.jpg"
-            alt="プロフィール画像"
-            onerror="this.style.display='none'"
-          >
+          <img class="avatar__img" src="images/profile.jpg" alt="Profile"
+            onerror="this.style.display='none'">
           <svg class="avatar__svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -66,42 +48,24 @@
               </linearGradient>
             </defs>
             <circle cx="100" cy="100" r="100" fill="url(#avatarGrad)"/>
-            <!-- Head -->
-            <circle cx="100" cy="72" r="30" fill="rgba(255,255,255,0.87)"/>
-            <!-- Body -->
+            <circle cx="100" cy="72"  r="30"  fill="rgba(255,255,255,0.87)"/>
             <ellipse cx="100" cy="150" rx="46" ry="34" fill="rgba(255,255,255,0.87)"/>
-            <!-- Subtle glow ring -->
-            <circle cx="100" cy="100" r="98" fill="none"
-              stroke="rgba(255,255,255,0.12)" stroke-width="4"/>
           </svg>
         </div>
-
-        <!-- テキスト -->
-        <div class="hero__text">
-          <p class="hero__label">Personal Lab</p>
-          <h1 class="hero__name">lifebit</h1>
-          <p class="hero__tagline">AIで、毎日をちょっとラクに。</p>
-          <p class="hero__desc">
-            日常の課題をAIとテクノロジーで解くプロジェクト集。<br>
-            家計管理・学習支援・投資分析など、<br>
-            本当に使いたいと思ったツールだけを作っています。
-          </p>
-          <div class="hero__links">
-            <!-- TODO: GitHubのURLを変更してください -->
-            <a
-              class="hero__link"
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              GitHub
-            </a>
-          </div>
+        <p class="hero__label">Personal Lab</p>
+        <h1 class="hero__name">lifebit</h1>
+        <p class="hero__tagline">AIで、毎日をちょっとラクに。</p>
+        <p class="hero__desc">
+          日常の課題をAIとテクノロジーで解くプロジェクト集。<br>
+          家計管理・学習支援・投資分析など、<br>
+          本当に使いたいと思ったツールだけを作っています。
+        </p>
+        <div class="hero__badges">
+          <span class="hero__badge">Next.js</span>
+          <span class="hero__badge">TypeScript</span>
+          <span class="hero__badge">Supabase</span>
+          <span class="hero__badge">AI / LLM</span>
         </div>
-
       </div>
     </section>
 
@@ -122,15 +86,6 @@
             シンプルで実用的なプロダクトを積み上げることが好きです。
           </p>
         </div>
-        <div class="about__skills">
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Supabase</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">PWA</span>
-          <span class="skill-tag">AI / LLM</span>
-        </div>
       </div>
     </section>
 
@@ -138,222 +93,201 @@
          Projects
          ================================================ -->
     <section class="section projects" id="projects">
-      <div class="container--wide">
-        <div class="container">
-          <h2 class="section__title">Projects</h2>
-          <p class="section__sub">自分で使うために作った、AIライフ改善ツール集。</p>
-        </div>
-
-        <div class="projects__grid container--wide">
-
-          <!-- ========================================
-               Card: 家計簿PWA
-               ======================================== -->
-          <article class="card reveal">
-            <div class="card__header">
-              <span class="card__emoji" aria-hidden="true">🏠</span>
-              <div class="card__header-text">
-                <h3 class="card__title">家計簿PWA</h3>
-                <p class="card__subtitle">夫婦2人で管理できる家計管理アプリ</p>
-              </div>
-            </div>
-
-            <p class="card__desc">
-              OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで
-              支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。
-            </p>
-
-            <div class="card__tags" role="list" aria-label="技術スタック">
-              <span class="tag" role="listitem">Next.js</span>
-              <span class="tag" role="listitem">TypeScript</span>
-              <span class="tag" role="listitem">Supabase</span>
-              <span class="tag" role="listitem">PWA</span>
-              <span class="tag" role="listitem">Recharts</span>
-            </div>
-
-            <details class="card__accordion">
-              <summary class="accordion__trigger">
-                <span>使い方</span>
-                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </summary>
-              <div class="accordion__body">
-                <ol class="accordion__steps">
-                  <li>アカウントを作成してログイン</li>
-                  <li>「家計を新規作成」または招待コードでパートナーと参加</li>
-                  <li>レシートをカメラで撮影 → OCRで自動入力</li>
-                  <li>ダッシュボードで月次グラフ・収支サマリーを確認</li>
-                </ol>
-              </div>
-            </details>
-
-            <div class="card__footer">
-              <!-- TODO: デプロイ後に実際のアプリURLを設定してください -->
-              <a href="#" class="btn btn--outline">アプリを見る →</a>
-              <!-- TODO: GitHubリポジトリのURLを設定してください -->
-              <a href="#" class="btn btn--ghost">GitHub</a>
-            </div>
-          </article>
-
-          <!-- ========================================
-               Card: 医療経営士試験PWA
-               ======================================== -->
-          <article class="card reveal">
-            <div class="card__header">
-              <span class="card__emoji" aria-hidden="true">📋</span>
-              <div class="card__header-text">
-                <h3 class="card__title">医療経営士試験対策PWA</h3>
-                <p class="card__subtitle">医療経営士3級合格を目指す問題演習アプリ</p>
-              </div>
-            </div>
-
-            <p class="card__desc">
-              7つの公式カテゴリを網羅した問題演習・模擬試験機能。
-              分野別正答率グラフで苦手分野を把握し、効率よく学習できます。
-            </p>
-
-            <div class="card__tags" role="list" aria-label="技術スタック">
-              <span class="tag" role="listitem">Next.js</span>
-              <span class="tag" role="listitem">TypeScript</span>
-              <span class="tag" role="listitem">Supabase</span>
-              <span class="tag" role="listitem">PWA</span>
-            </div>
-
-            <details class="card__accordion">
-              <summary class="accordion__trigger">
-                <span>使い方</span>
-                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </summary>
-              <div class="accordion__body">
-                <ol class="accordion__steps">
-                  <li>アカウントを作成してログイン</li>
-                  <li>「練習問題」「模擬試験」「学習履歴」からモードを選択</li>
-                  <li>分野別・ランダム・頻出問題から学習スタイルを選ぶ</li>
-                  <li>問題を解いて解説を確認、成績グラフで進捗を追跡</li>
-                </ol>
-              </div>
-            </details>
-
-            <div class="card__footer">
-              <a href="#" class="btn btn--outline">アプリを見る →</a>
-              <a href="#" class="btn btn--ghost">GitHub</a>
-            </div>
-          </article>
-
-          <!-- ========================================
-               Card: 株式AIコンパス
-               ======================================== -->
-          <article class="card reveal">
-            <div class="card__header">
-              <span class="card__emoji" aria-hidden="true">📈</span>
-              <div class="card__header-text">
-                <h3 class="card__title">株式AIコンパス</h3>
-                <p class="card__subtitle">日本株を財務・テクニカルでAIスコアリング</p>
-              </div>
-            </div>
-
-            <p class="card__desc">
-              財務健全性・成長性・テクニカル指標を統合した100点満点スコアで
-              日本株を評価。下落が市場全体の問題か個別企業の問題かをAIが自動判定します。
-            </p>
-
-            <div class="card__tags" role="list" aria-label="技術スタック">
-              <span class="tag" role="listitem">Next.js</span>
-              <span class="tag" role="listitem">TypeScript</span>
-              <span class="tag" role="listitem">Supabase</span>
-              <span class="tag" role="listitem">J-Quants API</span>
-              <span class="tag" role="listitem">Recharts</span>
-            </div>
-
-            <details class="card__accordion">
-              <summary class="accordion__trigger">
-                <span>使い方</span>
-                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </summary>
-              <div class="accordion__body">
-                <ol class="accordion__steps">
-                  <li>銘柄コード（例：7203）を入力して検索</li>
-                  <li>財務健全性・成長性・収益性・テクニカルの各スコアを確認</li>
-                  <li>下落理由（市場調整 vs 企業固有問題）の自動判定を参照</li>
-                  <li>スクリーニングでROE・PER・配当利回りから銘柄を絞り込む</li>
-                </ol>
-                <p style="font-size:11px;color:var(--color-text-muted);margin-top:0.75rem;">
-                  ※投資助言ではなく判断材料の提供を目的としています
-                </p>
-              </div>
-            </details>
-
-            <div class="card__footer">
-              <a href="#" class="btn btn--outline">アプリを見る →</a>
-              <a href="#" class="btn btn--ghost">GitHub</a>
-            </div>
-          </article>
-
-          <!-- ========================================
-               Card: AIダイエットコーチ（開発中）
-               新しいアプリを追加する場合はこのカードの上に
-               <article class="card reveal">...</article> をコピペしてください
-               ======================================== -->
-          <article class="card card--coming-soon reveal" aria-label="開発中プロジェクト">
-            <div class="card__badge">開発中</div>
-            <div class="card__header">
-              <span class="card__emoji" aria-hidden="true">🥗</span>
-              <div class="card__header-text">
-                <h3 class="card__title">AIダイエットコーチ</h3>
-                <p class="card__subtitle">AIが食事・運動をパーソナルサポート</p>
-              </div>
-            </div>
-            <p class="card__desc">
-              食事記録と目標設定をAIがサポートし、
-              無理なく続けられる健康管理を実現するアプリを開発予定です。
-            </p>
-            <div class="card__tags" role="list" aria-label="技術スタック（予定）">
-              <span class="tag" role="listitem">Next.js</span>
-              <span class="tag" role="listitem">TypeScript</span>
-              <span class="tag" role="listitem">AI / LLM</span>
-            </div>
-          </article>
-
-        </div><!-- /.projects__grid -->
-      </div>
-    </section>
-
-    <!-- ================================================
-         Comments（Giscus — GitHub Discussions連携）
-         ================================================ -->
-    <section class="section comments" id="comments">
       <div class="container">
-        <h2 class="section__title">Comments</h2>
-        <p class="section__sub">ご感想・フィードバックをお気軽にどうぞ。</p>
-        <div class="comments__widget" id="comments-widget">
-          <script src="https://giscus.app/client.js"
-                  data-repo="lifebit-lab/portfolio"
-                  data-repo-id="R_kgDOSs-aIw"
-                  data-category="General"
-                  data-category-id="DIC_kwDOSs-aI84C-Ng0"
-                  data-mapping="pathname"
-                  data-strict="0"
-                  data-reactions-enabled="1"
-                  data-emit-metadata="0"
-                  data-input-position="bottom"
-                  data-theme="light"
-                  data-lang="ja"
-                  crossorigin="anonymous"
-                  async>
-          </script>
-        </div>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__sub">自分で使うために作った、AIライフ改善ツール集。</p>
       </div>
+
+      <div class="projects__grid container--wide">
+
+        <!-- ========================================
+             Card: 家計簿PWA  accent: blue
+             ======================================== -->
+        <article class="card reveal" style="--card-accent: #3b82f6">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">家計簿PWA</h3>
+              <p class="card__subtitle">夫婦2人で管理できる家計管理アプリ</p>
+            </div>
+          </div>
+          <p class="card__desc">
+            OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで
+            支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。
+          </p>
+          <div class="card__tags" role="list">
+            <span class="tag" role="listitem">Next.js</span>
+            <span class="tag" role="listitem">TypeScript</span>
+            <span class="tag" role="listitem">Supabase</span>
+            <span class="tag" role="listitem">PWA</span>
+            <span class="tag" role="listitem">Recharts</span>
+          </div>
+          <details class="card__accordion">
+            <summary class="accordion__trigger">
+              <span>使い方</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion__body">
+              <ol class="accordion__steps">
+                <li>アカウントを作成してログイン</li>
+                <li>「家計を新規作成」または招待コードでパートナーと参加</li>
+                <li>レシートをカメラで撮影 → OCRで自動入力</li>
+                <li>ダッシュボードで月次グラフ・収支サマリーを確認</li>
+              </ol>
+            </div>
+          </details>
+          <div class="card__comments">
+            <button class="card__comments-btn" data-term="household-pwa" aria-expanded="false">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              コメント
+            </button>
+            <div class="card__comments-body" hidden></div>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn--disabled">準備中</span>
+          </div>
+        </article>
+
+        <!-- ========================================
+             Card: 医療経営士試験PWA  accent: teal
+             ======================================== -->
+        <article class="card reveal" style="--card-accent: #10b981">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">医療経営士試験対策PWA</h3>
+              <p class="card__subtitle">医療経営士3級合格を目指す問題演習アプリ</p>
+            </div>
+          </div>
+          <p class="card__desc">
+            7つの公式カテゴリを網羅した問題演習・模擬試験機能。
+            分野別正答率グラフで苦手分野を把握し、効率よく学習できます。
+          </p>
+          <div class="card__tags" role="list">
+            <span class="tag" role="listitem">Next.js</span>
+            <span class="tag" role="listitem">TypeScript</span>
+            <span class="tag" role="listitem">Supabase</span>
+            <span class="tag" role="listitem">PWA</span>
+          </div>
+          <details class="card__accordion">
+            <summary class="accordion__trigger">
+              <span>使い方</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion__body">
+              <ol class="accordion__steps">
+                <li>アカウントを作成してログイン</li>
+                <li>「練習問題」「模擬試験」「学習履歴」からモードを選択</li>
+                <li>分野別・ランダム・頻出問題から学習スタイルを選ぶ</li>
+                <li>問題を解いて解説を確認、成績グラフで進捗を追跡</li>
+              </ol>
+            </div>
+          </details>
+          <div class="card__comments">
+            <button class="card__comments-btn" data-term="medical-exam-pwa" aria-expanded="false">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              コメント
+            </button>
+            <div class="card__comments-body" hidden></div>
+          </div>
+          <div class="card__footer">
+            <a href="https://medical-exam-pwa-p2zt.vercel.app/login"
+               target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+              アプリを見る →
+            </a>
+          </div>
+        </article>
+
+        <!-- ========================================
+             Card: 株式AIコンパス  accent: amber
+             ======================================== -->
+        <article class="card reveal" style="--card-accent: #f59e0b">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">株式AIコンパス</h3>
+              <p class="card__subtitle">日本株を財務・テクニカルでAIスコアリング</p>
+            </div>
+          </div>
+          <p class="card__desc">
+            財務健全性・成長性・テクニカル指標を統合した100点満点スコアで
+            日本株を評価。下落が市場全体か個別企業の問題かをAIが自動判定します。
+          </p>
+          <div class="card__tags" role="list">
+            <span class="tag" role="listitem">Next.js</span>
+            <span class="tag" role="listitem">TypeScript</span>
+            <span class="tag" role="listitem">Supabase</span>
+            <span class="tag" role="listitem">J-Quants API</span>
+            <span class="tag" role="listitem">Recharts</span>
+          </div>
+          <details class="card__accordion">
+            <summary class="accordion__trigger">
+              <span>使い方</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion__body">
+              <ol class="accordion__steps">
+                <li>銘柄コード（例：7203）を入力して検索</li>
+                <li>財務健全性・成長性・収益性・テクニカルの各スコアを確認</li>
+                <li>下落理由（市場調整 vs 企業固有問題）の自動判定を参照</li>
+                <li>スクリーニングでROE・PER・配当利回りから銘柄を絞り込む</li>
+              </ol>
+              <p style="font-size:11px;color:var(--color-text-muted);margin-top:0.75rem;">
+                ※投資助言ではなく判断材料の提供を目的としています
+              </p>
+            </div>
+          </details>
+          <div class="card__comments">
+            <button class="card__comments-btn" data-term="stock-compass-ai" aria-expanded="false">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              コメント
+            </button>
+            <div class="card__comments-body" hidden></div>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn--disabled">準備中</span>
+          </div>
+        </article>
+
+        <!-- ========================================
+             Card: AIダイエットコーチ（開発中）  accent: violet
+             新しいアプリはこのカードの上に追加してください
+             ======================================== -->
+        <article class="card card--coming-soon reveal" style="--card-accent: #8b5cf6" aria-label="開発中">
+          <div class="card__badge">開発中</div>
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">AIダイエットコーチ</h3>
+              <p class="card__subtitle">AIが食事・運動をパーソナルサポート</p>
+            </div>
+          </div>
+          <p class="card__desc">
+            食事記録と目標設定をAIがサポートし、
+            無理なく続けられる健康管理を実現するアプリを開発予定です。
+          </p>
+          <div class="card__tags" role="list">
+            <span class="tag" role="listitem">Next.js</span>
+            <span class="tag" role="listitem">TypeScript</span>
+            <span class="tag" role="listitem">AI / LLM</span>
+          </div>
+        </article>
+
+      </div><!-- /.projects__grid -->
     </section>
 
     <!-- ================================================
@@ -370,12 +304,8 @@
             お問い合わせはGoogleフォームで受け付けています。<br>
             メールアドレスをご記入いただければ、折り返しご連絡いたします。
           </p>
-          <a
-            href="https://forms.gle/5zDJKCf65zTAAGA76"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn--primary"
-          >
+          <a href="https://forms.gle/5zDJKCf65zTAAGA76"
+             target="_blank" rel="noopener noreferrer" class="btn btn--primary">
             お問い合わせフォームを開く →
           </a>
         </div>
@@ -391,11 +321,7 @@
     <div class="container">
       <div class="footer__inner">
         <p class="footer__copy">© 2025 lifebit. All rights reserved.</p>
-        <nav class="footer__links" aria-label="フッターナビゲーション">
-          <a href="#top">トップへ</a>
-          <!-- TODO: GitHubのURLを変更してください -->
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </nav>
+        <a class="footer__top" href="#top">↑ トップへ</a>
       </div>
     </div>
   </footer>
