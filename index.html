@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AIを使った日常生活改善ツールを作っています。家計管理・学習支援・投資分析など、自分が本当に使いたいアプリを個人開発中。">
+  <meta name="description" content="AIを使った日常生活改善ツールを作っています。家計管理・学習支援・投資分析など、本当に使いたいアプリを個人開発中。">
   <title>lifebit — AIで、毎日をちょっとラクに</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,35 +37,16 @@
          ================================================ -->
     <section class="hero" id="top">
       <div class="hero__inner container">
-        <div class="hero__avatar" aria-hidden="true">
-          <img class="avatar__img" src="images/profile.jpg" alt="Profile"
-            onerror="this.style.display='none'">
-          <svg class="avatar__svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stop-color="#818cf8"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="100" fill="url(#avatarGrad)"/>
-            <circle cx="100" cy="72"  r="30"  fill="rgba(255,255,255,0.87)"/>
-            <ellipse cx="100" cy="150" rx="46" ry="34" fill="rgba(255,255,255,0.87)"/>
-          </svg>
-        </div>
-        <p class="hero__label">Personal Lab</p>
-        <h1 class="hero__name">lifebit</h1>
-        <p class="hero__tagline">AIで、毎日をちょっとラクに。</p>
-        <p class="hero__desc">
+        <p class="hero__kicker">Personal Lab</p>
+        <h1 class="hero__headline">
+          AIで、<br>
+          毎日をちょっと<br>
+          <em>ラクに。</em>
+        </h1>
+        <p class="hero__sub">
           日常の課題をAIとテクノロジーで解くプロジェクト集。<br>
-          家計管理・学習支援・投資分析など、<br>
           本当に使いたいと思ったツールだけを作っています。
         </p>
-        <div class="hero__badges">
-          <span class="hero__badge">Next.js</span>
-          <span class="hero__badge">TypeScript</span>
-          <span class="hero__badge">Supabase</span>
-          <span class="hero__badge">AI / LLM</span>
-        </div>
       </div>
     </section>
 
@@ -74,17 +55,28 @@
          ================================================ -->
     <section class="section about" id="about">
       <div class="container">
-        <h2 class="section__title">About</h2>
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">作っている人</h2>
         <div class="about__content">
           <p>
-            日々の暮らしをAIとテクノロジーで少しだけラクにすることに興味があります。
-            家計の見える化、試験対策、投資判断のサポートなど、
+            日々の暮らしをAIとテクノロジーで少しだけラクにすることに
+            興味があります。家計の見える化、試験対策、投資判断のサポートなど、
             自分自身が「本当に使いたい」と思ったものだけをコツコツ作っています。
           </p>
           <p>
             主なスタックはNext.js / TypeScript / Supabase。
             シンプルで実用的なプロダクトを積み上げることが好きです。
           </p>
+        </div>
+        <div class="about__rule"></div>
+        <div class="about__skills">
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">PWA</span>
+          <span class="skill-tag">AI / LLM</span>
         </div>
       </div>
     </section>
@@ -94,39 +86,40 @@
          ================================================ -->
     <section class="section projects" id="projects">
       <div class="container">
-        <h2 class="section__title">Projects</h2>
+        <p class="section__eyebrow">Projects</p>
+        <h2 class="section__title">作ったもの</h2>
         <p class="section__sub">自分で使うために作った、AIライフ改善ツール集。</p>
       </div>
 
       <div class="projects__grid container--wide">
 
-        <!-- ========================================
-             Card: 家計簿PWA  accent: blue
-             ======================================== -->
-        <article class="card reveal" style="--card-accent: #3b82f6">
-          <div class="card__header">
-            <div>
-              <h3 class="card__title">家計簿PWA</h3>
-              <p class="card__subtitle">夫婦2人で管理できる家計管理アプリ</p>
-            </div>
+        <!-- 01: 家計簿PWA -->
+        <article class="card reveal">
+          <p class="card__num">01</p>
+          <div>
+            <h3 class="card__title">家計簿PWA</h3>
+            <p class="card__subtitle">夫婦2人で管理できる家計管理アプリ</p>
           </div>
           <p class="card__desc">
             OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで
             支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。
           </p>
           <div class="card__tags" role="list">
-            <span class="tag" role="listitem">Next.js</span>
-            <span class="tag" role="listitem">TypeScript</span>
-            <span class="tag" role="listitem">Supabase</span>
-            <span class="tag" role="listitem">PWA</span>
-            <span class="tag" role="listitem">Recharts</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">PWA</span>
+            <span class="tag">Recharts</span>
           </div>
+          <div class="card__divider"></div>
           <details class="card__accordion">
             <summary class="accordion__trigger">
               <span>使い方</span>
               <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
             </summary>
             <div class="accordion__body">
               <ol class="accordion__steps">
@@ -139,12 +132,12 @@
           </details>
           <div class="card__comments">
             <button class="card__comments-btn" data-term="household-pwa" aria-expanded="false">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
-              コメント
+              Comment
             </button>
             <div class="card__comments-body" hidden></div>
           </div>
@@ -153,32 +146,32 @@
           </div>
         </article>
 
-        <!-- ========================================
-             Card: 医療経営士試験PWA  accent: teal
-             ======================================== -->
-        <article class="card reveal" style="--card-accent: #10b981">
-          <div class="card__header">
-            <div>
-              <h3 class="card__title">医療経営士試験対策PWA</h3>
-              <p class="card__subtitle">医療経営士3級合格を目指す問題演習アプリ</p>
-            </div>
+        <!-- 02: 医療経営士試験PWA -->
+        <article class="card reveal">
+          <p class="card__num">02</p>
+          <div>
+            <h3 class="card__title">医療経営士試験対策PWA</h3>
+            <p class="card__subtitle">医療経営士3級合格を目指す問題演習アプリ</p>
           </div>
           <p class="card__desc">
             7つの公式カテゴリを網羅した問題演習・模擬試験機能。
             分野別正答率グラフで苦手分野を把握し、効率よく学習できます。
           </p>
           <div class="card__tags" role="list">
-            <span class="tag" role="listitem">Next.js</span>
-            <span class="tag" role="listitem">TypeScript</span>
-            <span class="tag" role="listitem">Supabase</span>
-            <span class="tag" role="listitem">PWA</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">PWA</span>
           </div>
+          <div class="card__divider"></div>
           <details class="card__accordion">
             <summary class="accordion__trigger">
               <span>使い方</span>
               <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
             </summary>
             <div class="accordion__body">
               <ol class="accordion__steps">
@@ -191,50 +184,50 @@
           </details>
           <div class="card__comments">
             <button class="card__comments-btn" data-term="medical-exam-pwa" aria-expanded="false">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
-              コメント
+              Comment
             </button>
             <div class="card__comments-body" hidden></div>
           </div>
           <div class="card__footer">
             <a href="https://medical-exam-pwa-p2zt.vercel.app/login"
-               target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
               アプリを見る →
             </a>
           </div>
         </article>
 
-        <!-- ========================================
-             Card: 株式AIコンパス  accent: amber
-             ======================================== -->
-        <article class="card reveal" style="--card-accent: #f59e0b">
-          <div class="card__header">
-            <div>
-              <h3 class="card__title">株式AIコンパス</h3>
-              <p class="card__subtitle">日本株を財務・テクニカルでAIスコアリング</p>
-            </div>
+        <!-- 03: 株式AIコンパス -->
+        <article class="card reveal">
+          <p class="card__num">03</p>
+          <div>
+            <h3 class="card__title">株式AIコンパス</h3>
+            <p class="card__subtitle">日本株を財務・テクニカルでAIスコアリング</p>
           </div>
           <p class="card__desc">
             財務健全性・成長性・テクニカル指標を統合した100点満点スコアで
             日本株を評価。下落が市場全体か個別企業の問題かをAIが自動判定します。
           </p>
           <div class="card__tags" role="list">
-            <span class="tag" role="listitem">Next.js</span>
-            <span class="tag" role="listitem">TypeScript</span>
-            <span class="tag" role="listitem">Supabase</span>
-            <span class="tag" role="listitem">J-Quants API</span>
-            <span class="tag" role="listitem">Recharts</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">J-Quants API</span>
+            <span class="tag">Recharts</span>
           </div>
+          <div class="card__divider"></div>
           <details class="card__accordion">
             <summary class="accordion__trigger">
               <span>使い方</span>
               <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
             </summary>
             <div class="accordion__body">
               <ol class="accordion__steps">
@@ -243,19 +236,19 @@
                 <li>下落理由（市場調整 vs 企業固有問題）の自動判定を参照</li>
                 <li>スクリーニングでROE・PER・配当利回りから銘柄を絞り込む</li>
               </ol>
-              <p style="font-size:11px;color:var(--color-text-muted);margin-top:0.75rem;">
+              <p style="font-size:11px;color:var(--text-3);margin-top:0.75rem;line-height:1.6;">
                 ※投資助言ではなく判断材料の提供を目的としています
               </p>
             </div>
           </details>
           <div class="card__comments">
             <button class="card__comments-btn" data-term="stock-compass-ai" aria-expanded="false">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
-              コメント
+              Comment
             </button>
             <div class="card__comments-body" hidden></div>
           </div>
@@ -264,49 +257,44 @@
           </div>
         </article>
 
-        <!-- ========================================
-             Card: AIダイエットコーチ（開発中）  accent: violet
-             新しいアプリはこのカードの上に追加してください
-             ======================================== -->
-        <article class="card card--coming-soon reveal" style="--card-accent: #8b5cf6" aria-label="開発中">
-          <div class="card__badge">開発中</div>
-          <div class="card__header">
-            <div>
-              <h3 class="card__title">AIダイエットコーチ</h3>
-              <p class="card__subtitle">AIが食事・運動をパーソナルサポート</p>
-            </div>
+        <!-- 04: AIダイエットコーチ（開発中）
+             ↑ 新しいアプリはこのカードの上に追加してください -->
+        <article class="card card--coming-soon reveal" aria-label="開発中">
+          <div class="card__badge">Coming Soon</div>
+          <p class="card__num">04</p>
+          <div>
+            <h3 class="card__title">AIダイエットコーチ</h3>
+            <p class="card__subtitle">AIが食事・運動をパーソナルサポート</p>
           </div>
           <p class="card__desc">
             食事記録と目標設定をAIがサポートし、
             無理なく続けられる健康管理を実現するアプリを開発予定です。
           </p>
           <div class="card__tags" role="list">
-            <span class="tag" role="listitem">Next.js</span>
-            <span class="tag" role="listitem">TypeScript</span>
-            <span class="tag" role="listitem">AI / LLM</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">AI / LLM</span>
           </div>
         </article>
 
-      </div><!-- /.projects__grid -->
+      </div>
     </section>
 
     <!-- ================================================
-         Contact（Google Forms）
+         Contact
          ================================================ -->
     <section class="section contact" id="contact">
       <div class="container">
-        <h2 class="section__title">Contact</h2>
-        <p class="section__sub">
-          ご質問・ご要望・コラボのお誘いなど、お気軽にどうぞ。
-        </p>
+        <p class="section__eyebrow">Contact</p>
+        <h2 class="section__title">お問い合わせ</h2>
         <div class="contact__cta">
           <p class="contact__cta-desc">
-            お問い合わせはGoogleフォームで受け付けています。<br>
+            ご質問・ご要望・コラボのお誘いなど、お気軽にどうぞ。<br>
             メールアドレスをご記入いただければ、折り返しご連絡いたします。
           </p>
           <a href="https://forms.gle/5zDJKCf65zTAAGA76"
-             target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-            お問い合わせフォームを開く →
+            target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+            フォームを開く →
           </a>
         </div>
       </div>
@@ -320,8 +308,8 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer__inner">
-        <p class="footer__copy">© 2025 lifebit. All rights reserved.</p>
-        <a class="footer__top" href="#top">↑ トップへ</a>
+        <p class="footer__copy">© 2025 lifebit</p>
+        <a class="footer__top" href="#top">↑ Top</a>
       </div>
     </div>
   </footer>
