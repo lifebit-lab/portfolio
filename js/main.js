@@ -96,4 +96,25 @@ document.querySelectorAll('.card__comments-btn').forEach(btn => {
   });
 });
 
+/* ===========================
+   Projects: Jump Nav (auto-generated)
+   =========================== */
+const jumpNav = document.getElementById('projects-jump');
+if (jumpNav) {
+  document.querySelectorAll('.projects__grid > .card').forEach(card => {
+    const num   = card.querySelector('.card__num')?.textContent.trim();
+    const title = card.querySelector('.card__title')?.textContent.trim();
+    if (!num || !title) return;
+
+    const id = `project-${num}`;
+    if (!card.id) card.id = id;
+
+    const link = document.createElement('a');
+    link.className   = 'projects__jump-link';
+    link.href        = `#${id}`;
+    link.textContent = `${num} ${title}`;
+    jumpNav.appendChild(link);
+  });
+}
+
 /* Contact は Google Forms リンクのため JS 不要 */
