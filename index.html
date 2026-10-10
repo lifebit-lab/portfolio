@@ -3,623 +3,562 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AIを使った日常生活改善ツールを作っています。家計管理・学習支援・投資分析など、本当に使いたいアプリを個人開発中。">
-  <title>lifebit — AIで、毎日をちょっとラクに</title>
+  <title>LIFEBIT LAB — Digital Life Experiments</title>
+  <meta name="description" content="暮らしの違和感を、コードで変える。AIとテクノロジーで日常の小さな課題を実験し、使える形にする個人ラボ「LIFEBIT LAB」の作品集。家計管理・学習支援・投資分析・インタラクティブアートなど。">
+  <link rel="canonical" href="https://lifebit-lab.github.io/portfolio/">
+  <meta name="theme-color" content="#080A0F">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LIFEBIT LAB">
+  <meta property="og:title" content="LIFEBIT LAB — Digital Life Experiments">
+  <meta property="og:description" content="暮らしの違和感を、コードで変える。AIとテクノロジーで日常の課題を解決する個人ラボ。">
+  <meta property="og:url" content="https://lifebit-lab.github.io/portfolio/">
+  <meta property="og:image" content="https://lifebit-lab.github.io/portfolio/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LIFEBIT LAB",
+    "url": "https://lifebit-lab.github.io/portfolio/",
+    "description": "AIとテクノロジーで日常の課題を解決する個人ラボの作品集",
+    "inLanguage": "ja"
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- ================================================
+       背景：WebGLの「実験体」（文字は描かない）
+       ================================================ -->
+  <div class="stage" aria-hidden="true">
+    <div class="stage__fallback"></div>
+    <canvas class="stage__gl" id="stage-gl"></canvas>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
 
   <!-- ================================================
        Navigation
        ================================================ -->
   <header class="site-header">
-    <nav class="nav container">
-      <a class="nav__logo" href="#top">lifebit</a>
-      <button class="nav__toggle" id="nav-toggle"
-        aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links">
-        <span class="hamburger"></span>
-      </button>
+    <a class="brand" href="#top">
+      <span class="brand__mark">LIFEBIT LAB</span>
+      <span class="brand__sub">INDEPENDENT DIGITAL LAB</span>
+    </a>
+    <button class="nav__toggle" id="nav-toggle"
+      aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links">
+      <span class="nav__toggle-line"></span>
+    </button>
+    <nav class="nav" aria-label="メイン">
       <ul class="nav__links" id="nav-links" role="list">
-        <li><a class="nav__link" href="#about">About</a></li>
-        <li><a class="nav__link" href="#projects">Projects</a></li>
-        <li><a class="nav__link" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="#about"><span class="nav__num">02</span>About</a></li>
+        <li><a class="nav__link" href="#projects"><span class="nav__num">03</span>Projects</a></li>
+        <li><a class="nav__link" href="#contact"><span class="nav__num">05</span>Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <!-- 画面端の補助情報 -->
+  <p class="edge edge--left" aria-hidden="true">EXP-2026 / 35.68°N 139.76°E / DIGITAL LIFE EXPERIMENTS</p>
+  <nav class="rail" aria-label="セクション">
+    <ol role="list">
+      <li><a class="rail__link" href="#intro" data-for="intro">01<span>Intro</span></a></li>
+      <li><a class="rail__link" href="#about" data-for="about">02<span>About</span></a></li>
+      <li><a class="rail__link" href="#projects" data-for="projects">03<span>Projects</span></a></li>
+      <li><a class="rail__link" href="#experiments" data-for="experiments">04<span>Experiments</span></a></li>
+      <li><a class="rail__link" href="#contact" data-for="contact">05<span>Contact</span></a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
 
     <!-- ================================================
          Hero
          ================================================ -->
-    <section class="hero" id="top">
-      <div class="hero__inner container">
-        <h1 class="hero__headline">
-          コードで、<br>
-          毎日をちょっと<br>
-          <em>ラクに。</em>
-        </h1>
-        <p class="hero__sub">
-          個人的な日常の課題をAIとコードで解くアプリ集。<br>
-          試しに作ってみたいと思ったツールを作っています。
-        </p>
+    <section class="hero" id="top" data-scene="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title">
+        <span class="mask"><span style="--d:.15s">SMALL</span></span>
+        <span class="mask"><span style="--d:.25s">PROBLEMS.</span></span>
+        <span class="mask mask--accent"><span style="--d:.4s">BIG IDEAS.</span></span>
+      </h1>
+      <div class="hero__copy">
+        <p class="hero__jp">暮らしの違和感を、<br>コードで変える。</p>
+        <p class="hero__note">AIとテクノロジーで、日常の課題を解決する個人ラボ。<br>コードで、毎日をちょっとラクに。</p>
+      </div>
+      <a class="hero__scroll" href="#intro">
+        <span class="hero__scroll-line" aria-hidden="true"></span>SCROLL
+      </a>
+    </section>
+
+    <!-- ================================================
+         01 — Introduction
+         ================================================ -->
+    <section class="intro" id="intro" data-scene="intro" aria-labelledby="intro-title">
+      <p class="label"><span>01</span> INTRODUCTION</p>
+      <h2 class="intro__title" id="intro-title">
+        <span class="line">CURIOUS</span>
+        <span class="line line--indent">BY NATURE.</span>
+        <span class="line line--small">BUILT TO MAKE</span>
+        <span class="line line--accent">LIFE BETTER.</span>
+      </h2>
+      <p class="intro__jp line">気になったことを、<br>作って確かめる。</p>
+    </section>
+
+    <!-- ================================================
+         02 — About
+         ================================================ -->
+    <section class="about" id="about" data-scene="about" aria-labelledby="about-title">
+      <p class="label"><span>02</span> ABOUT THE LAB</p>
+      <div class="about__grid">
+        <h2 class="about__title reveal" id="about-title">
+          NOT A<br>TRADITIONAL<br>ENGINEER.
+          <span class="about__title-sub">A BUILDER OF THINGS THAT MATTER.</span>
+        </h2>
+        <div class="about__body reveal">
+          <p class="about__lead">非エンジニア。Claude Codeにハマる。趣味は早朝サウナ。</p>
+          <p>日々の暮らしをAIとテクノロジーで少しだけラクにすることに興味があります。試験対策、投資判断のサポート、ストレッチ習慣化など、試しに作ってみたいと思ったツールだけを作っています。</p>
+          <p>主なスタックはNext.js / TypeScript / Supabase。シンプルで実用的なプロダクトを積み上げることが好きです。</p>
+
+          <dl class="notebook" aria-label="ラボノート">
+            <div><dt>ROLE</dt><dd>非エンジニア × AI × コード</dd></div>
+            <div><dt>METHOD</dt><dd>気になる → 作る → 使って確かめる</dd></div>
+            <div><dt>RITUAL</dt><dd>早朝サウナ</dd></div>
+            <div><dt>STACK</dt><dd>
+              <ul class="stack" role="list">
+                <li>Next.js</li><li>TypeScript</li><li>React</li><li>Supabase</li>
+                <li>Tailwind CSS</li><li>PWA</li><li>AI / LLM</li>
+              </ul>
+            </dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <!-- ================================================
-         About
+         03 — Projects
          ================================================ -->
-    <section class="section about" id="about">
-      <div class="container">
-        <p class="section__eyebrow">About</p>
-        <h2 class="section__title">作っている人</h2>
-        <div class="about__content">
-          <p>
-            非エンジニア。ClaudeCodeハマる。趣味は早朝サウナ。
-          </p>
-          <p>
-            日々の暮らしをAIとテクノロジーで少しだけラクにすることに
-            興味があります。試験対策、投資判断のサポート、ストレッチ習慣化など、
-            試しに作ってみたいと思ったツールだけを作っています。
-          </p>
-          <p>
-            主なスタックはNext.js / TypeScript / Supabase。
-            シンプルで実用的なプロダクトを積み上げることが好きです。
-          </p>
-        </div>
-        <div class="about__rule"></div>
-        <div class="about__skills">
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Supabase</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">PWA</span>
-          <span class="skill-tag">AI / LLM</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         Projects
-         ================================================ -->
-    <section class="section projects" id="projects">
-      <div class="container">
-        <p class="section__eyebrow">Projects</p>
-        <h2 class="section__title">作ったもの</h2>
-        <p class="section__sub">自分で使うために作った、AIライフ改善ツール集。</p>
-      </div>
-
-      <div class="container--wide">
+    <section class="projects" id="projects" data-scene="projects" aria-labelledby="projects-title">
+      <div class="projects__head">
+        <p class="label"><span>03</span> PROJECTS</p>
+        <h2 class="projects__title reveal" id="projects-title">THINGS<br>WE BUILT.<span class="projects__title-jp">作ったもの</span></h2>
+        <p class="projects__sub reveal">自分で使うために作った、AIライフ改善ツール集。<br>公開中・デモ・停止中・開発中の状態をそのまま記載しています。</p>
         <nav class="projects__jump" id="projects-jump" aria-label="プロジェクト一覧へのショートカット"></nav>
       </div>
 
-      <div class="projects__grid container--wide">
+      <div class="works">
 
-        <!-- 01: 家計簿PWA -->
-        <article class="card reveal">
-          <p class="card__num">01</p>
-          <div>
-            <h3 class="card__title">家計簿PWA</h3>
-            <p class="card__subtitle">夫婦2人で管理できる家計管理アプリ</p>
+        <!-- 01: 家計簿PWA（停止中） -->
+        <article class="work work--right reveal" aria-labelledby="w01">
+          <div class="work__visual work__visual--art" aria-hidden="true">
+            <svg viewBox="0 0 600 400" class="art">
+              <rect width="600" height="400" fill="#0d121c"/>
+              <g stroke="rgba(243,245,247,.12)"><path d="M0 100H600M0 200H600M0 300H600"/></g>
+              <g transform="translate(70 60)">
+                <path d="M0 0h150v270l-15-10-15 10-15-10-15 10-15-10-15 10-15-10-15 10-15-10-15 10z" fill="#151b28" stroke="rgba(243,245,247,.3)"/>
+                <g fill="rgba(243,245,247,.35)"><rect x="20" y="30" width="80" height="6"/><rect x="20" y="60" width="110" height="4"/><rect x="20" y="80" width="90" height="4"/><rect x="20" y="100" width="100" height="4"/><rect x="20" y="120" width="70" height="4"/></g>
+                <rect x="20" y="170" width="110" height="10" fill="#9299A8"/>
+                <rect x="-10" y="138" width="170" height="2" fill="#C8FF45" opacity=".8"/>
+              </g>
+              <g transform="translate(300 300)">
+                <rect x="0" y="-90" width="34" height="90" fill="#9274FF" opacity=".55"/>
+                <rect x="50" y="-150" width="34" height="150" fill="rgba(243,245,247,.25)"/>
+                <rect x="100" y="-60" width="34" height="60" fill="rgba(243,245,247,.25)"/>
+                <rect x="150" y="-120" width="34" height="120" fill="#9274FF" opacity=".55"/>
+                <rect x="200" y="-180" width="34" height="180" fill="rgba(243,245,247,.25)"/>
+              </g>
+              <g fill="none" stroke="#F3F5F7" stroke-width="2"><circle cx="490" cy="70" r="16"/><circle cx="514" cy="70" r="16"/></g>
+            </svg>
+            <span class="work__stamp">PAUSED</span>
           </div>
-          <p class="card__desc">
-            OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで
-            支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">PWA</span>
-            <span class="tag">Recharts</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">01</span><span class="status status--paused">PAUSED · 停止中</span></p>
+            <h3 class="work__title" id="w01">家計簿PWA</h3>
+            <p class="work__lead">夫婦2人で管理できる家計管理アプリ</p>
+            <p class="work__desc">OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li><li>Recharts</li></ul>
+            <div class="work__actions">
+              <span class="btn btn--disabled" aria-disabled="true">現在停止中です</span>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>アカウントを作成してログイン</li>
                 <li>「家計を新規作成」または招待コードでパートナーと参加</li>
                 <li>レシートをカメラで撮影 → OCRで自動入力</li>
                 <li>ダッシュボードで月次グラフ・収支サマリーを確認</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="household-pwa" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <span class="btn btn--disabled">停止中</span>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="household-pwa" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
-        <!-- 02: 医療経営士試験PWA -->
-        <article class="card reveal">
-          <p class="card__num">02</p>
-          <div>
-            <h3 class="card__title">医療経営士試験対策PWA</h3>
-            <p class="card__subtitle">医療経営士3級合格を目指す問題演習アプリ</p>
+        <!-- 02: 医療経営士試験対策PWA -->
+        <article class="work work--left reveal" aria-labelledby="w02">
+          <div class="work__visual work__visual--art" aria-hidden="true">
+            <svg viewBox="0 0 600 400" class="art">
+              <rect width="600" height="400" fill="#0d121c"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#9299A8">
+                <text x="40" y="48">CATEGORY / ACCURACY</text>
+                <text x="380" y="48">Q.042 / MOCK EXAM</text>
+              </g>
+              <g transform="translate(40 76)">
+                <rect width="290" height="10" fill="rgba(243,245,247,.08)"/><rect width="250" height="10" fill="#C8FF45"/>
+                <rect y="34" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="34" width="190" height="10" fill="rgba(243,245,247,.5)"/>
+                <rect y="68" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="68" width="220" height="10" fill="rgba(243,245,247,.5)"/>
+                <rect y="102" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="102" width="120" height="10" fill="#9274FF"/>
+                <rect y="136" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="136" width="205" height="10" fill="rgba(243,245,247,.5)"/>
+                <rect y="170" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="170" width="160" height="10" fill="rgba(243,245,247,.5)"/>
+                <rect y="204" width="290" height="10" fill="rgba(243,245,247,.08)"/><rect y="204" width="235" height="10" fill="rgba(243,245,247,.5)"/>
+              </g>
+              <g transform="translate(380 76)" fill="none" stroke="rgba(243,245,247,.3)">
+                <rect width="180" height="38"/><rect y="50" width="180" height="38" stroke="#C8FF45"/><rect y="100" width="180" height="38"/><rect y="150" width="180" height="38"/>
+                <g fill="rgba(243,245,247,.35)" stroke="none"><rect x="14" y="16" width="90" height="5"/><rect x="14" y="66" width="120" height="5" fill="#C8FF45"/><rect x="14" y="116" width="70" height="5"/><rect x="14" y="166" width="100" height="5"/></g>
+              </g>
+              <text x="40" y="350" font-family="Space Grotesk, sans-serif" font-size="56" font-weight="700" fill="#F3F5F7">7<tspan font-size="16" fill="#9299A8" dx="10">OFFICIAL CATEGORIES</tspan></text>
+            </svg>
           </div>
-          <p class="card__desc">
-            7つの公式カテゴリを網羅した問題演習・模擬試験機能。
-            分野別正答率グラフで苦手分野を把握し、効率よく学習できます。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">PWA</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">02</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w02">医療経営士試験対策PWA</h3>
+            <p class="work__lead">医療経営士3級合格を目指す問題演習アプリ</p>
+            <p class="work__desc">7つの公式カテゴリを網羅した問題演習・模擬試験機能。学習履歴と分野別正答率グラフで苦手分野を把握し、効率よく学習できます。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://medical-exam-pwa.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">医療経営士試験対策PWAを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>アカウントを作成してログイン</li>
                 <li>「練習問題」「模擬試験」「学習履歴」からモードを選択</li>
                 <li>分野別・ランダム・頻出問題から学習スタイルを選ぶ</li>
                 <li>問題を解いて解説を確認、成績グラフで進捗を追跡</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="medical-exam-pwa" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://medical-exam-pwa.vercel.app/"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              アプリを見る →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="medical-exam-pwa" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
         <!-- 03: StockAIコンパス -->
-        <article class="card reveal">
-          <p class="card__num">03</p>
-          <div>
-            <h3 class="card__title">StockAIコンパス</h3>
-            <p class="card__subtitle">日本株を財務・テクニカルでAIスコアリング</p>
-          </div>
-          <p class="card__desc">
-            財務健全性・成長性・テクニカル指標を統合した100点満点スコアで
-            日本株を評価。下落が市場全体か個別企業の問題かをAIが自動判定します。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">J-Quants API</span>
-            <span class="tag">Recharts</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <article class="work work--wide reveal" aria-labelledby="w03">
+          <a class="work__visual frame" href="https://stock-compass-ai.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="OPEN">
+            <span class="frame__bar">stock-compass-ai.vercel.app</span>
+            <img src="images/stock.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">03</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w03">StockAIコンパス</h3>
+            <p class="work__lead">日本株を財務・成長性・テクニカルで評価する判断支援ツール</p>
+            <p class="work__desc">財務健全性・成長性・テクニカル指標を統合した100点満点スコアで日本株を評価。下落が市場全体か個別企業の問題かをAIが自動判定します。</p>
+            <p class="work__notice">※投資助言ではなく、判断材料の提供を目的としています。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>J-Quants API</li><li>Recharts</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://stock-compass-ai.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">StockAIコンパスを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>銘柄コード（例：7203）を入力して検索</li>
                 <li>財務健全性・成長性・収益性・テクニカルの各スコアを確認</li>
                 <li>下落理由（市場調整 vs 企業固有問題）の自動判定を参照</li>
                 <li>スクリーニングでROE・PER・配当利回りから銘柄を絞り込む</li>
               </ol>
-              <p style="font-size:11px;color:var(--text-3);margin-top:0.75rem;line-height:1.6;">
-                ※投資助言ではなく判断材料の提供を目的としています
-              </p>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="stock-compass-ai" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://stock-compass-ai.vercel.app/" class="btn btn--outline" target="_blank" rel="noopener noreferrer">アプリを見る →</a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="stock-compass-ai" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
         <!-- 04: Okuriba -->
-        <article class="card reveal">
-          <p class="card__num">04</p>
-          <div>
-            <h3 class="card__title">Okuriba</h3>
-            <p class="card__subtitle">URLで送れるデジタルお便りアプリ</p>
-          </div>
-          <p class="card__desc">
-            宛名・タイトル・本文・画像を組み合わせて作るデジタルメッセージカード。
-            URLを共有するだけで相手はアカウント不要で閲覧可能。
-            90日の有効期限管理と画像添付に対応。GAS + Firebase Hosting で構成。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">HTML / CSS / JS</span>
-            <span class="tag">GAS</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Google Drive</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <article class="work work--right reveal" aria-labelledby="w04">
+          <a class="work__visual letter" href="https://okuriba-dms.web.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="OPEN">
+            <span class="letter__card letter__card--back"><img src="images/okuriba-sky.webp" alt="" width="400" height="267" loading="lazy" decoding="async"></span>
+            <span class="letter__card">
+              <img src="images/okuriba-sakura.webp" alt="" width="400" height="271" loading="lazy" decoding="async">
+              <span class="letter__to">To. あなたへ</span>
+              <span class="letter__lines"><i></i><i></i><i></i></span>
+              <span class="letter__url">okuriba-dms.web.app/v/••••••</span>
+            </span>
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">04</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w04">Okuriba</h3>
+            <p class="work__lead">URLで送れるデジタルお便りアプリ</p>
+            <p class="work__desc">宛名・タイトル・本文・画像を組み合わせて作るデジタルメッセージカード。URLを共有するだけで相手はアカウント不要で閲覧可能。90日の有効期限管理と画像添付に対応。GAS + Firebase Hosting で構成。</p>
+            <ul class="work__stack" role="list"><li>HTML / CSS / JS</li><li>GAS</li><li>Firebase</li><li>Google Drive</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://okuriba-dms.web.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">Okuribaを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>アカウントを登録してログイン</li>
                 <li>宛名・タイトル・本文・画像を入力してメッセージを作成</li>
                 <li>プレビューで確認して保存</li>
                 <li>生成された閲覧URLを相手にシェア（相手はアカウント不要）</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="okuriba" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://okuriba-dms.web.app/"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              アプリを見る →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="okuriba" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
-        <!-- 05: Aurora Memoria -->
-        <article class="card reveal">
-          <p class="card__num">05</p>
-          <div>
-            <h3 class="card__title">Aurora Memoria</h3>
-            <p class="card__subtitle">記憶の極光 — インタラクティブアート</p>
-          </div>
-          <p class="card__desc">
-            夜空に触れると記憶が光になる。マウス・タッチで描いた線がオーロラのように漂い、
-            時間とともにゆっくり薄れていく没入型インタラクティブ体験。
-            Web Audio API によるアンビエント音響も内蔵。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Three.js</span>
-            <span class="tag">WebGL</span>
-            <span class="tag">GLSL Shader</span>
-            <span class="tag">Web Audio API</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <!-- 05: Aurora Memoria（特集） -->
+        <article class="work work--feature reveal" aria-labelledby="w05">
+          <a class="work__visual aurora" href="https://aurora-memoria.vercel.app" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="PLAY">
+            <img src="images/aurora.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+            <canvas class="aurora__canvas"></canvas>
+            <span class="aurora__tag">LIVE PREVIEW — INTERACTIVE ART</span>
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">05</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w05">Aurora Memoria</h3>
+            <p class="work__lead">記憶の極光 — 光を描き、記憶を残し、やがて消えていく</p>
+            <p class="work__desc">夜空に触れると記憶が光になる。マウス・タッチで描いた線がオーロラのように漂い、時間とともにゆっくり薄れていく没入型インタラクティブ体験。Web Audio API によるアンビエント音響も内蔵。</p>
+            <ul class="work__stack" role="list"><li>Three.js</li><li>WebGL</li><li>GLSL Shader</li><li>Web Audio API</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://aurora-memoria.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="PLAY">Aurora Memoriaを体験する<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>夜空をクリック・なぞってオーロラを描く</li>
                 <li>下の欄にことばを入力すると光のログに浮かぶ</li>
                 <li>記憶は約150秒でゆっくり薄れていく</li>
                 <li>「忘却の風」ボタンで全記憶を解放</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="aurora-memoria" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://aurora-memoria.vercel.app"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              体験する →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="aurora-memoria" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
         <!-- 06: 哲学ビジネス相談室 -->
-        <article class="card reveal">
-          <p class="card__num">06</p>
-          <div>
-            <h3 class="card__title">哲学ビジネス相談室</h3>
-            <p class="card__subtitle">AIと哲学でビジネスの悩みを解きほぐす</p>
-          </div>
-          <p class="card__desc">
-            山口周著書「武器になる哲学」の概念を活用し、仕事の悩みをAIと対話しながら整理。
-            25の哲学・人文知の概念ライブラリから自動提案し、
-            RAGで文脈に合った視点を提供します。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Gemini API</span>
-            <span class="tag">RAG</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <article class="work work--left reveal" aria-labelledby="w06">
+          <a class="work__visual frame frame--concepts" href="https://business-philosophy-app.vercel.app" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="OPEN">
+            <span class="frame__bar">business-philosophy-app.vercel.app</span>
+            <img src="images/philosophy.webp" alt="" width="1200" height="517" loading="lazy" decoding="async">
+            <span class="concepts">
+              <span>無知の知</span><span>弁証法</span><span>認知的不協和</span><span>美意識の経営</span>
+            </span>
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">06</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w06">哲学ビジネス相談室</h3>
+            <p class="work__lead">AIと哲学でビジネスの悩みを解きほぐす</p>
+            <p class="work__desc">山口周著書「武器になる哲学」の概念を活用し、仕事の悩みをAIと対話しながら整理。25の哲学・人文知の概念ライブラリから自動提案し、RAGで文脈に合った視点を提供します。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Gemini API</li><li>RAG</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://business-philosophy-app.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">哲学ビジネス相談室を開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>「相談を始める」からビジネスの悩みを入力</li>
                 <li>関連する哲学・人文知の概念がAIで自動提案される</li>
                 <li>概念ライブラリから気になる概念を選んで掘り下げる</li>
                 <li>カテゴリ（リーダーシップ・意思決定など）からも探せる</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="business-philosophy-app" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://business-philosophy-app.vercel.app"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              アプリを見る →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="business-philosophy-app" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
         <!-- 07: aura. -->
-        <article class="card reveal">
-          <p class="card__num">07</p>
-          <div>
-            <h3 class="card__title">aura.</h3>
-            <p class="card__subtitle">バラバラな診断結果を、AIがひとつに統合する</p>
-          </div>
-          <p class="card__desc">
-            MBTI・どうぶつタイプ・血液型など複数の診断結果をAIが統合分析し、
-            あなただけの「オーラカード」を生成。ネイティブシェア機能付きで
-            結果をそのまま友人と共有できます。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Vite</span>
-            <span class="tag">Gemini API</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <article class="work work--right reveal" aria-labelledby="w07">
+          <a class="work__visual frame frame--aura" href="https://aura-profile-omega.vercel.app" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="OPEN">
+            <span class="frame__bar">aura-profile-omega.vercel.app</span>
+            <img src="images/aura.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+            <span class="aura-card"><span class="aura-card__orb"></span><span class="aura-card__name">YOUR AURA</span><span class="aura-card__meta">16 TYPES + ANIMAL + BLOOD</span></span>
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">07</span><span class="status status--live">LIVE · 公開中</span></p>
+            <h3 class="work__title" id="w07">aura.</h3>
+            <p class="work__lead">バラバラな診断結果を、AIがひとつに統合する</p>
+            <p class="work__desc">MBTI・どうぶつタイプ・血液型など複数の診断結果をAIが統合分析し、あなただけの「オーラカード」を生成。ネイティブシェア機能付きで結果をそのまま友人と共有できます。</p>
+            <ul class="work__stack" role="list"><li>React</li><li>TypeScript</li><li>Vite</li><li>Gemini API</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://aura-profile-omega.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">aura.を開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>MBTIタイプを選択</li>
                 <li>どうぶつタイプ・血液型など追加の診断結果を入力（任意）</li>
                 <li>AIが分析し、オーラカードを生成</li>
                 <li>カードを画像として保存・シェア</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="aura-profile" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://aura-profile-omega.vercel.app"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              アプリを見る →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="aura-profile" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
 
-        <!-- 08: バリアフリー乗換ガイド
-             ↑ 新しい公開アプリはこのカードの上に追加してください
-             （Coming Soon カードはこの下に並べる） -->
-        <article class="card reveal">
-          <p class="card__num">08</p>
-          <div>
-            <h3 class="card__title">バリアフリー乗換ガイド</h3>
-            <p class="card__subtitle">車椅子で迷わない、駅のバリアフリー乗換案内</p>
-          </div>
-          <p class="card__desc">
-            エレベーター最寄りの号車と乗換ルートを提示。各情報に確信度バッジを付け、
-            確かな情報だけを号車案内に使います。EV運休時は迂回・介助の手順まで
-            フォロー。※収録2ルートのデモ版です。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">React</span>
-            <span class="tag">Vite</span>
-            <span class="tag">PWA</span>
-            <span class="tag">Cloudflare Pages</span>
-          </div>
-          <div class="card__divider"></div>
-          <details class="card__accordion">
-            <summary class="accordion__trigger">
-              <span>使い方</span>
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="accordion__body">
-              <ol class="accordion__steps">
+        <!-- 08: バリアフリー乗換ガイド（デモ）
+             ↑ 新しい公開アプリはこの作品の上に追加してください
+             （Coming Soon は .lab に並べる） -->
+        <article class="work work--phone reveal" aria-labelledby="w08">
+          <a class="work__visual phone" href="https://barrierfree-transfer.pages.dev/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="DEMO">
+            <img src="images/barrierfree.webp" alt="" width="600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">08</span><span class="status status--demo">DEMO · デモ版</span></p>
+            <h3 class="work__title" id="w08">バリアフリー乗換ガイド</h3>
+            <p class="work__lead">車椅子で迷わない、駅のバリアフリー乗換案内</p>
+            <p class="work__desc">エレベーター最寄りの号車と乗換ルートを提示。各情報に確信度バッジを付け、確かな情報だけを号車案内に使います。EV運休時は迂回・介助の手順までフォロー。利用者の「着いてから困る」不安を、事前に減らすための設計です。</p>
+            <p class="work__notice">※収録2ルートのデモ版です。</p>
+            <ul class="work__stack" role="list"><li>React</li><li>Vite</li><li>PWA</li><li>Cloudflare Pages</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://barrierfree-transfer.pages.dev/" target="_blank" rel="noopener noreferrer" data-cursor="DEMO">バリアフリー乗換ガイドのデモを見る<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方・コメント</summary>
+              <ol class="work__steps">
                 <li>出発駅・到着駅を選んでルートを表示</li>
                 <li>エレベーター最寄りの号車と乗換ルートを確認</li>
                 <li>確信度バッジ（確実／推定／要確認）で情報の確度を把握</li>
                 <li>EV運休時は迂回ルート・保安員介助の手順を参照</li>
               </ol>
-            </div>
-          </details>
-          <div class="card__comments">
-            <button class="card__comments-btn" data-term="barrierfree-transfer" aria-expanded="false">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Comment
-            </button>
-            <div class="card__comments-body" hidden></div>
-          </div>
-          <div class="card__footer">
-            <a href="https://barrierfree-transfer.pages.dev/"
-              target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-              デモを見る →
-            </a>
+              <div class="comments">
+                <button class="comments__btn" type="button" data-term="barrierfree-transfer" aria-expanded="false">コメントを表示</button>
+                <div class="comments__body" hidden></div>
+              </div>
+            </details>
           </div>
         </article>
-
-        <!-- 09: AIダイエットコーチ（開発中） -->
-        <article class="card card--coming-soon reveal" aria-label="開発中">
-          <div class="card__badge">Coming Soon</div>
-          <p class="card__num">09</p>
-          <div>
-            <h3 class="card__title">AIパーソナルコーチ</h3>
-            <p class="card__subtitle">AIが食事・運動をパーソナルサポート</p>
-          </div>
-          <p class="card__desc">
-            食事記録と目標設定をAIがサポートし、
-            無理なく続けられる健康管理を実現するアプリを開発予定です。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">AI / LLM</span>
-          </div>
-        </article>
-
-        <!-- 10: saeru（開発中） -->
-        <article class="card card--coming-soon reveal" aria-label="開発中">
-          <div class="card__badge">Coming Soon</div>
-          <p class="card__num">10</p>
-          <div>
-            <h3 class="card__title">saeru（冴える）</h3>
-            <p class="card__subtitle">遊んで育てる、冴える毎日のパズル育成</p>
-          </div>
-          <p class="card__desc">
-            和柄のミニゲームで遊びながら盆栽を育てる、cozy な育成体験を開発中。
-            気持ちよく続けられる「冴える毎日」を目指しています。
-          </p>
-          <div class="card__tags" role="list">
-            <span class="tag">React</span>
-            <span class="tag">Vite</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PWA</span>
-          </div>
-        </article>
-
       </div>
-    </section>
 
-    <!-- ================================================
-         Contact
-         ================================================ -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <p class="section__eyebrow">Contact</p>
-        <h2 class="section__title">お問い合わせ</h2>
-        <div class="contact__cta">
-          <p class="contact__cta-desc">
-            ご質問・ご要望など、お気軽にどうぞ。<br>
-          </p>
-          <a href="https://forms.gle/5zDJKCf65zTAAGA76"
-            target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-            フォームを開く →
-          </a>
+      <!-- Coming Soon -->
+      <div class="lab">
+        <p class="lab__label">IN THE LAB — 開発中</p>
+        <div class="lab__grid">
+          <article class="work work--lab reveal" aria-labelledby="w09">
+            <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(243,245,247,.15)" stroke-width="8"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#C8FF45" stroke-width="8" stroke-dasharray="210 400" transform="rotate(-90 60 60)"/>
+              <circle cx="60" cy="60" r="34" fill="none" stroke="rgba(243,245,247,.15)" stroke-width="8"/>
+              <circle cx="60" cy="60" r="34" fill="none" stroke="#9274FF" stroke-width="8" stroke-dasharray="120 400" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="work__body">
+              <p class="work__meta"><span class="work__num">09</span><span class="status status--dev">COMING SOON · 開発予定</span></p>
+              <h3 class="work__title" id="w09">AIパーソナルコーチ</h3>
+              <p class="work__lead">AIが食事・運動をパーソナルサポート</p>
+              <p class="work__desc">食事記録と目標設定をAIがサポートし、無理なく続けられる健康管理を実現するアプリを開発予定です。</p>
+              <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>AI / LLM</li></ul>
+            </div>
+          </article>
+          <article class="work work--lab reveal" aria-labelledby="w10">
+            <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
+              <g fill="none" stroke="rgba(243,245,247,.16)">
+                <path d="M4 104a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0"/>
+                <path d="M4 114a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0"/>
+              </g>
+              <g fill="none" stroke="#F3F5F7" stroke-width="3" stroke-linecap="round">
+                <path d="M60 88V62c0-12 6-18 14-22"/>
+                <path d="M60 70c-8-5-16-5-22-2"/>
+              </g>
+              <ellipse cx="80" cy="34" rx="22" ry="12" fill="#C8FF45" opacity=".9"/>
+              <ellipse cx="62" cy="22" rx="14" ry="8" fill="#C8FF45" opacity=".55"/>
+              <ellipse cx="34" cy="64" rx="15" ry="8" fill="#C8FF45" opacity=".7"/>
+              <path d="M40 88h40l-5 14H45z" fill="#9274FF"/>
+              <rect x="36" y="84" width="48" height="6" rx="2" fill="#9274FF"/>
+            </svg>
+            <div class="work__body">
+              <p class="work__meta"><span class="work__num">10</span><span class="status status--dev">COMING SOON · 開発中</span></p>
+              <h3 class="work__title" id="w10">saeru（冴える）</h3>
+              <p class="work__lead">遊んで育てる、冴える毎日のパズル育成</p>
+              <p class="work__desc">和柄のミニゲームで遊びながら盆栽を育てる、cozy な育成体験を開発中。気持ちよく続けられる「冴える毎日」を目指しています。</p>
+              <ul class="work__stack" role="list"><li>React</li><li>Vite</li><li>TypeScript</li><li>PWA</li></ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- ================================================
+         04 — Experiments
+         ================================================ -->
+    <section class="experiments" id="experiments" data-scene="experiments" aria-labelledby="exp-title">
+      <p class="label"><span>04</span> EXPERIMENTS</p>
+      <h2 class="experiments__title reveal" id="exp-title">IDEAS ARE CHEAP.<br><em>EXPERIMENTS</em><br>MAKE THEM REAL.</h2>
+      <p class="experiments__sub reveal">作品の中で実際に採用した、設計上の判断の記録。</p>
+      <ol class="logs" role="list">
+        <li class="log reveal">
+          <p class="log__id">LOG—08 / CONFIDENCE</p>
+          <h3 class="log__title">確かなことだけを、確かだと言う。</h3>
+          <p>バリアフリー乗換ガイドでは、各情報に「確実／推定／要確認」の確信度を付け、号車案内には確かな情報だけを使う。間違った案内は、案内がないことより利用者を困らせるからです。</p>
+        </li>
+        <li class="log reveal">
+          <p class="log__id">LOG—05 / IMPERMANENCE</p>
+          <h3 class="log__title">消えることを、設計する。</h3>
+          <p>Aurora Memoriaの記憶は約150秒でゆっくり薄れていきます。保存するのではなく、余韻を残すこと自体を体験の中心に置きました。</p>
+        </li>
+        <li class="log reveal">
+          <p class="log__id">LOG—03 / RESTRAINT</p>
+          <h3 class="log__title">AIに、断定させない。</h3>
+          <p>StockAIコンパスは銘柄を推奨しません。スコアと下落理由の判定は「判断材料」として示し、最後の判断は使う人に委ねる設計です。</p>
+        </li>
+        <li class="log reveal">
+          <p class="log__id">LOG—04 / FRICTION</p>
+          <h3 class="log__title">受け取る側に、手間をかけさせない。</h3>
+          <p>Okuribaのお便りは、URLひとつで届きます。受け取る人はアカウント登録不要。有効期限は90日に区切っています。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================================================
+         05 — Contact
+         ================================================ -->
+    <section class="contact" id="contact" data-scene="contact" aria-labelledby="contact-title">
+      <p class="label"><span>05</span> CONTACT</p>
+      <h2 class="contact__title reveal" id="contact-title">HAVE AN IDEA?<br><em>LET'S MAKE IT REAL.</em></h2>
+      <p class="contact__jp reveal">気になること、作ってみたいもの。<br>お気軽にご連絡ください。</p>
+      <a class="btn btn--primary btn--large reveal" href="https://forms.gle/5zDJKCf65zTAAGA76" target="_blank" rel="noopener noreferrer" data-cursor="WRITE">お問い合わせフォームを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+    </section>
+
   </main>
 
-  <!-- ================================================
-       Footer
-       ================================================ -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__inner">
-        <p class="footer__copy">© 2026 lifebit</p>
-        <a class="footer__top" href="#top">↑ Top</a>
-      </div>
-    </div>
+    <p>© 2026 LIFEBIT LAB</p>
+    <a class="footer__top" href="#top">↑ Top</a>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/hero-gl.js" defer></script>
 </body>
 </html>
