@@ -433,8 +433,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .status::before { flex: none; }
 .status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; }
-.status--live   { color: var(--lime); }
-.status--live::before { background: var(--lime); box-shadow: 0 0 0 4px rgba(200,255,69,.15); }
+.status--open   { color: var(--lime); }
+.status--open::before { background: var(--lime); box-shadow: 0 0 0 4px rgba(200,255,69,.15); }
 .status--demo   { color: #b9a7ff; }
 .status--demo::before { background: var(--violet); }
 .status--paused { color: var(--text-2); }
