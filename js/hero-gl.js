@@ -89,28 +89,36 @@
       vec3 ro = vec3(0.0, 0.0, 3.2);
       vec3 rd = normalize(vec3(q, -1.8));
       float t = 0.0, glow = 0.0;
+      // 輪郭を滑らかにするため、当たらなかった光線の最接近距離を覚えておく
+      float md = 1e5, tm = 3.2;
       bool hit = false;
       for (int i = 0; i < STEPS; i++) {
         vec3 p = ro + rd * t;
         float d = map(p);
+        if (d < md) { md = d; tm = t; }
         glow += exp(-max(d, 0.0) * 10.0) * 0.012;
-        if (d < 0.002) { hit = true; break; }
+        if (d < 0.0012) { hit = true; break; }
         t += d * 0.8;
         if (t > 6.0) break;
       }
 
       float rad = radius();
-      if (hit && rad > 0.01) {
-        vec3 p = ro + rd * t;
+      // 当たった光線は完全に覆う。かすめた光線だけ、1ピクセルが表面上で
+      // 占める幅を基準に覆い率を連続値にして、輪郭の階段状を消す
+      float px = tm * 2.0 / max(uRes.y * uPos.z * 1.8, 1.0);
+      float cov = hit ? 1.0 : 1.0 - smoothstep(0.0, max(px * 1.6, 1e-5), md);
+      if (cov > 0.002 && rad > 0.01) {
+        vec3 p = ro + rd * tm;
         vec3 n = normal(p);
         float fres = pow(1.0 - max(dot(n, -rd), 0.0), 3.0);
         float band = smoothstep(-0.7, 0.7, n.y + 0.4 * sin(uTime * 0.3 + n.x * 2.0));
         vec3 rim = mix(accentA, accentB, band);
         vec3 body = INK * 0.6 + NAVY * 0.5 * max(dot(n, normalize(vec3(-0.4, 0.8, 0.6))), 0.0);
         float inner = 0.5 + 0.5 * field(p * 1.4);
-        col = body + rim * fres * 1.25 + accentB * inner * 0.06;
+        vec3 surf = body + rim * fres * 1.25 + accentB * inner * 0.06;
         // 局所的なハイライト
-        col += LIME * pow(max(dot(reflect(rd, n), normalize(vec3(0.6, 0.7, 0.4))), 0.0), 24.0) * 0.6;
+        surf += LIME * pow(max(dot(reflect(rd, n), normalize(vec3(0.6, 0.7, 0.4))), 0.0), 24.0) * 0.6;
+        col = mix(col, surf, cov);
       }
       col += mix(VIOLET, accentA, 0.35) * glow * smoothstep(0.1, 0.8, uIntro);
 
@@ -179,12 +187,19 @@
   const U = {};
   ['uRes', 'uTime', 'uMouse', 'uPos', 'uHue', 'uConv', 'uIntro'].forEach(n => { U[n] = gl.getUniformLocation(prog, n); });
 
-  // 解像度：負荷に応じて自動で下げる
-  let quality = isSmall ? 0.5 : 0.7;
+  // 解像度：高精細な画面でも輪郭が粗く見えないよう等倍から始め、負荷に応じて下げる。
+  // 1画素ごとにレイマーチングするため、大型ディスプレイでは総画素数で上限をかける
+  let quality = isSmall ? 0.75 : 1.0;
+  const BUDGET = isSmall ? 1.6e6 : 4.2e6;
   function resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5) * quality;
-    const w = Math.max(1, Math.round(window.innerWidth * dpr));
-    const h = Math.max(1, Math.round(window.innerHeight * dpr));
+    const dpr = Math.min(window.devicePixelRatio || 1, 2) * quality;
+    let w = Math.max(1, Math.round(window.innerWidth * dpr));
+    let h = Math.max(1, Math.round(window.innerHeight * dpr));
+    if (w * h > BUDGET) {
+      const k = Math.sqrt(BUDGET / (w * h));
+      w = Math.max(1, Math.round(w * k));
+      h = Math.max(1, Math.round(h * k));
+    }
     if (canvas.width !== w || canvas.height !== h) {
       canvas.width = w; canvas.height = h;
       gl.viewport(0, 0, w, h);
