@@ -460,7 +460,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .work__stack li::before { content: '/ '; color: var(--text-3); }
 .work__actions { margin-top: 26px; }
 
-.work__more { margin-top: 22px; border-top: 1px solid var(--line); }
+.work__more { margin-top: 22px; border-top: 1px solid var(--line); container-type: inline-size; }
 .work__more summary {
   list-style: none; cursor: pointer;
   display: flex; justify-content: space-between; align-items: center;
@@ -481,14 +481,76 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   content: counter(step, decimal-leading-zero);
   font-family: var(--f-mono); font-size: 0.6875rem; color: var(--lime); padding-top: 4px;
 }
-.comments { margin-top: 12px; padding-bottom: 12px; }
-.comments__btn {
-  font-family: var(--f-mono); font-size: 0.75rem; color: var(--text-1);
-  border: 1px solid var(--line-2); padding: 8px 14px; border-radius: 2px; min-height: 40px;
-  transition: border-color .2s, color .2s;
+/* 仕組み：箱と矢印のフロー図（箱=HTML / 矢印=CSS） */
+.flow__summary { font-size: 0.875rem; color: var(--text-1); line-height: 1.75; }
+.flow__caveat {
+  margin-top: 8px; font-family: var(--f-mono); font-size: 0.6875rem; color: var(--text-2);
+  display: inline-flex; gap: 6px;
 }
-.comments__btn:hover { border-color: var(--lime); color: var(--lime); }
-.comments__body { margin-top: 12px; }
+.flow__caveat::before { content: '※'; }
+
+.flow {
+  display: flex; flex-direction: column;
+  margin: 18px 0 4px; padding-bottom: 12px;
+}
+.flow__step { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
+
+/* 作品の全幅に出して、図に横並びの余地をつくる */
+.work__flow { grid-column: 1 / 13; margin-top: 0; }
+
+.flow__box {
+  display: block; text-align: center;
+  padding: 11px 14px;
+  border: 1px solid var(--line-2); border-radius: 3px;
+  background: rgba(16, 21, 33, .55);
+}
+.flow__box b { display: block; font-size: 0.8125rem; font-weight: 700; line-height: 1.5; }
+.flow__box i {
+  display: block; margin-top: 3px; font-style: normal;
+  font-family: var(--f-mono); font-size: 0.625rem; color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+
+/* 矢印：線は擬似要素、ラベルは背景で線を隠して重ねる */
+.flow__arrow { position: relative; display: grid; place-items: center; min-height: 44px; }
+.flow__arrow::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 1px; background: var(--line-2); transform: translateX(-50%);
+}
+.flow__arrow::after {
+  content: ''; position: absolute; left: 50%; bottom: 1px;
+  width: 5px; height: 5px;
+  border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2);
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.flow__arrow i {
+  position: relative; font-style: normal;
+  padding: 2px 8px; background: var(--ink);
+  font-family: var(--f-mono); font-size: 0.625rem; letter-spacing: .04em; color: var(--text-2);
+}
+
+/* 幅に余裕がある場所では横並びに組み替える */
+@container (min-width: 1180px) {
+  .flow { flex-direction: row; align-items: stretch; }
+  .flow__step { flex-direction: row; align-items: stretch; flex: 1 1 auto; min-width: 0; }
+  .flow__step:first-child { flex: 0 0 auto; }
+  /* 箱は中身なりの幅、矢印が余白を吸収して線を伸ばす */
+  .flow__box {
+    flex: 0 1 auto; min-width: 0; padding: 11px 10px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .flow__box b { white-space: nowrap; }
+  .flow__arrow { min-height: 0; flex: 1 1 auto; min-width: 56px; padding: 0 6px; }
+  .flow__arrow i { padding: 2px 6px; text-align: center; }
+  .flow__arrow::before {
+    left: 0; right: 0; top: 50%; bottom: auto;
+    width: auto; height: 1px; transform: translateY(-50%);
+  }
+  .flow__arrow::after {
+    left: auto; right: 1px; bottom: auto; top: 50%;
+    transform: translate(0, -50%) rotate(-45deg);
+  }
+}
 
 /* ボタン */
 .btn {

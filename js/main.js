@@ -106,40 +106,6 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
 }
 
 /* ===========================
-   Per-work Giscus (lazy load)
-   =========================== */
-document.querySelectorAll('.comments__btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const body   = btn.closest('.comments').querySelector('.comments__body');
-    const isOpen = body.hidden;
-
-    body.hidden = !isOpen;
-    btn.setAttribute('aria-expanded', String(isOpen));
-    btn.textContent = isOpen ? 'コメントを閉じる' : 'コメントを表示';
-
-    if (isOpen && !body.querySelector('.giscus')) {
-      const script = document.createElement('script');
-      script.src = 'https://giscus.app/client.js';
-      script.setAttribute('data-repo',            'lifebit-lab/portfolio');
-      script.setAttribute('data-repo-id',         'R_kgDOSs-aIw');
-      script.setAttribute('data-category',        'General');
-      script.setAttribute('data-category-id',     'DIC_kwDOSs-aI84C-Ng0');
-      script.setAttribute('data-mapping',         'specific');
-      script.setAttribute('data-term',            btn.dataset.term);
-      script.setAttribute('data-strict',          '0');
-      script.setAttribute('data-reactions-enabled', '1');
-      script.setAttribute('data-emit-metadata',   '0');
-      script.setAttribute('data-input-position',  'bottom');
-      script.setAttribute('data-theme',           'dark');
-      script.setAttribute('data-lang',            'ja');
-      script.setAttribute('crossorigin',          'anonymous');
-      script.async = true;
-      body.appendChild(script);
-    }
-  });
-});
-
-/* ===========================
    Projects: Jump Nav (auto-generated)
    =========================== */
 const jumpNav = document.getElementById('projects-jump');

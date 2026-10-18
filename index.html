@@ -191,25 +191,35 @@
             <p class="work__meta"><span class="work__num">01</span><span class="status status--paused">PAUSED · 停止中</span></p>
             <h3 class="work__title" id="w01">家計簿PWA</h3>
             <p class="work__lead">夫婦2人で管理できる家計管理アプリ</p>
-            <p class="work__desc">OCRでレシートを自動読み込みし、カテゴリ別・月別グラフで支出を可視化。招待コードでパートナーと家計をリアルタイム共有できます。</p>
+            <p class="work__desc">収支を記録し、カテゴリ別・月別グラフで支出を可視化。招待コードでパートナーと家計を共有でき、片方が入力すると、もう片方の画面にもすぐ反映されます。</p>
             <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li><li>Recharts</li></ul>
             <div class="work__actions">
               <span class="btn btn--disabled" aria-disabled="true">現在停止中です</span>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>アカウントを作成してログイン</li>
                 <li>「家計を新規作成」または招待コードでパートナーと参加</li>
-                <li>レシートをカメラで撮影 → OCRで自動入力</li>
+                <li>収支を手入力して登録（カテゴリ・口座を選択）</li>
                 <li>ダッシュボードで月次グラフ・収支サマリーを確認</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="household-pwa" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">夫婦で同じ家計を見るためのアプリ。片方が入力すると、もう片方の画面にもすぐ反映されます。</p>
+            <p class="flow__caveat">現在は停止中の構成です。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>夫婦2人</b><i>利用者</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>ログイン</i></span><span class="flow__box"><b>本人確認</b><i>Supabase Auth</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>招待コード</i></span><span class="flow__box"><b>ふたりの世帯</b><i>households</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>開く</i></span><span class="flow__box"><b>家計簿の画面</b><i>Next.js</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>手入力</i></span><span class="flow__box"><b>家計データ</b><i>Supabase / PostgreSQL</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>即時配信</i></span><span class="flow__box"><b>2人の画面に反映</b><i>Supabase Realtime</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>集計</i></span><span class="flow__box"><b>カテゴリ別グラフ</b><i>Recharts</i></span></li>
+            </ol>
+            </details>
         </article>
 
         <!-- 02: 医療経営士試験対策PWA -->
@@ -241,25 +251,34 @@
             <p class="work__meta"><span class="work__num">02</span><span class="status status--open">OPEN · 公開中</span></p>
             <h3 class="work__title" id="w02">医療経営士試験対策PWA</h3>
             <p class="work__lead">医療経営士3級合格を目指す問題演習アプリ</p>
-            <p class="work__desc">7つの公式カテゴリを網羅した問題演習・模擬試験機能。学習履歴と分野別正答率グラフで苦手分野を把握し、効率よく学習できます。</p>
+            <p class="work__desc">8つの公式カテゴリを網羅した問題演習・模擬試験機能。学習履歴と分野別正答率グラフで苦手分野を把握し、効率よく学習できます。</p>
             <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
             <div class="work__actions">
               <a class="btn btn--primary" href="https://medical-exam-pwa.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">医療経営士試験対策PWAを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>アカウントを作成してログイン</li>
                 <li>「練習問題」「模擬試験」「学習履歴」からモードを選択</li>
                 <li>分野別・ランダム・頻出問題から学習スタイルを選ぶ</li>
                 <li>問題を解いて解説を確認、成績グラフで進捗を追跡</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="medical-exam-pwa" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">医療経営士3級の問題を解きながら、苦手な分野を見つけるための学習アプリ。出題はデータベース側でランダムに選んでいます。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>受験者</b><i>利用者</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>ログイン</i></span><span class="flow__box"><b>本人確認</b><i>Supabase Auth</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>モード選択</i></span><span class="flow__box"><b>練習 / 模擬試験</b><i>8分野・頻出・50問80分</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>条件を渡す</i></span><span class="flow__box"><b>ランダム出題</b><i>DB関数 get_random_questions</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>解答する</i></span><span class="flow__box"><b>解答を記録</b><i>answers</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>分野別に集計</i></span><span class="flow__box"><b>累積正答率</b><i>学習履歴</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>60%未満</i></span><span class="flow__box"><b>苦手分野を表示</b><i>復習へ</i></span></li>
+            </ol>
+          </details>
         </article>
 
         <!-- 03: StockAIコンパス -->
@@ -272,27 +291,36 @@
             <p class="work__meta"><span class="work__num">03</span><span class="status status--open">OPEN · 公開中</span></p>
             <h3 class="work__title" id="w03">StockAIコンパス</h3>
             <p class="work__lead">日本株を財務・成長性・テクニカルで評価する判断支援ツール</p>
-            <p class="work__desc">財務健全性・成長性・テクニカル指標を統合した100点満点スコアで日本株を評価。下落が市場全体か個別企業の問題かをAIが自動判定します。</p>
+            <p class="work__desc">財務健全性・成長性・テクニカル指標を統合した100点満点スコアで日本株を評価。下落が市場全体か個別企業の問題かを、ルールベースで自動分類します。</p>
             <p class="work__notice">※投資助言ではなく、判断材料の提供を目的としています。</p>
-            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>J-Quants API</li><li>Recharts</li></ul>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>J-Quants API</li><li>Yahoo Finance</li><li>Recharts</li></ul>
             <div class="work__actions">
               <a class="btn btn--primary" href="https://stock-compass-ai.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">StockAIコンパスを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>銘柄コード（例：7203）を入力して検索</li>
                 <li>財務健全性・成長性・収益性・テクニカルの各スコアを確認</li>
                 <li>下落理由（市場調整 vs 企業固有問題）の自動判定を参照</li>
                 <li>スクリーニングでROE・PER・配当利回りから銘柄を絞り込む</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="stock-compass-ai" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">銘柄コードを入れると、2つの市場データから指標を集め、100点満点のスコアに組み立てます。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>利用者</b><i>銘柄コードを入力</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>検索</i></span><span class="flow__box"><b>銘柄を特定</b><i>/api/stocks/search</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>株価を取得</i></span><span class="flow__box"><b>株価・財務データ</b><i>J-Quants API v2</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>期を補完</i></span><span class="flow__box"><b>成長率を補う</b><i>Yahoo Finance</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>6観点で採点</i></span><span class="flow__box"><b>スコアを算出</b><i>財務・成長・収益・還元・割安・テクニカル</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>分類</i></span><span class="flow__box"><b>下落理由</b><i>ルールベースで分類</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>グラフ化</i></span><span class="flow__box"><b>結果を表示</b><i>Recharts</i></span></li>
+            </ol>
+          </details>
 
         <!-- 04: Okuriba -->
         <article class="work work--right reveal" aria-labelledby="w04">
@@ -315,20 +343,29 @@
               <a class="btn btn--primary" href="https://okuriba-dms.web.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">Okuribaを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>アカウントを登録してログイン</li>
                 <li>宛名・タイトル・本文・画像を入力してメッセージを作成</li>
                 <li>プレビューで確認して保存</li>
                 <li>生成された閲覧URLを相手にシェア（相手はアカウント不要）</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="okuriba" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">宛名と本文、画像を選んでお便りをつくると、URLがひとつ発行されます。受け取る人は登録なしで開けます。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>送り手</b><i>利用者</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>ログイン</i></span><span class="flow__box"><b>本人確認</b><i>Users シート</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>文面を選ぶ</i></span><span class="flow__box"><b>お便りを作成</b><i>テンプレート＋本文</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>保存</i></span><span class="flow__box"><b>保存の受け口</b><i>Google Apps Script</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>画像を預ける</i></span><span class="flow__box"><b>画像の保管</b><i>Google ドライブ</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>行を追加</i></span><span class="flow__box"><b>お便りの台帳</b><i>cards・有効期限90日</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>URLを渡す</i></span><span class="flow__box"><b>受け手が開く</b><i>登録不要で閲覧</i></span></li>
+            </ol>
+          </details>
 
         <!-- 05: Aurora Memoria（特集） -->
         <article class="work work--feature reveal" aria-labelledby="w05">
@@ -347,20 +384,29 @@
               <a class="btn btn--primary" href="https://aurora-memoria.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="PLAY">Aurora Memoriaを体験する<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>夜空をクリック・なぞってオーロラを描く</li>
                 <li>下の欄にことばを入力すると光のログに浮かぶ</li>
                 <li>記憶は約150秒でゆっくり薄れていく</li>
                 <li>「忘却の風」ボタンで全記憶を解放</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="aurora-memoria" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">夜空をなぞると、その軌跡が光のリボンになります。描いた記憶は150秒かけて静かに薄れていきます。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>来訪者</b><i>マウス / タッチ</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>なぞる</i></span><span class="flow__box"><b>軌跡を取得</b><i>座標の列</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>曲線にする</i></span><span class="flow__box"><b>曲線を生成</b><i>CatmullRomCurve3</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>帯にする</i></span><span class="flow__box"><b>光のリボン</b><i>ShaderMaterial</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>加算合成</i></span><span class="flow__box"><b>夜空に重ねる</b><i>Three.js r128</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>150秒かけて</i></span><span class="flow__box"><b>ゆっくり消える</b><i>lifeSeconds: 150</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>同時に</i></span><span class="flow__box"><b>環境音</b><i>Web Audio API</i></span></li>
+            </ol>
+          </details>
 
         <!-- 06: 哲学ビジネス相談室 -->
         <article class="work work--left reveal" aria-labelledby="w06">
@@ -375,26 +421,35 @@
             <p class="work__meta"><span class="work__num">06</span><span class="status status--open">OPEN · 随時調整中</span></p>
             <h3 class="work__title" id="w06">哲学ビジネス相談室</h3>
             <p class="work__lead">AIと哲学でビジネスの悩みを解きほぐす</p>
-            <p class="work__desc">山口周著書「武器になる哲学」の概念を活用し、仕事の悩みをAIと対話しながら整理。25の哲学・人文知の概念ライブラリから自動提案し、RAGで文脈に合った視点を提供します。</p>
-            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Gemini API</li><li>RAG</li></ul>
+            <p class="work__desc">山口周著書「武器になる哲学」の概念を活用し、仕事の悩みをAIと対話しながら整理。25の哲学・人文知の概念ライブラリから関連する概念を自動で選び、その視点を添えて回答します。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Gemini API</li><li>概念ライブラリ</li></ul>
             <div class="work__actions">
               <a class="btn btn--primary" href="https://business-philosophy-app.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">哲学ビジネス相談室を開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>「相談を始める」からビジネスの悩みを入力</li>
                 <li>関連する哲学・人文知の概念がAIで自動提案される</li>
                 <li>概念ライブラリから気になる概念を選んで掘り下げる</li>
                 <li>カテゴリ（リーダーシップ・意思決定など）からも探せる</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="business-philosophy-app" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">仕事の悩みを書くと、25の概念ライブラリから関連しそうなものを選び、その視点を添えて答えます。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>相談者</b><i>利用者</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>悩みを書く</i></span><span class="flow__box"><b>相談画面</b><i>Next.js</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>語を照合</i></span><span class="flow__box"><b>概念を選ぶ</b><i>25の概念ライブラリ</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>概念を添える</i></span><span class="flow__box"><b>プロンプトを組む</b><i>/api/chat</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>生成を依頼</i></span><span class="flow__box"><b>文章を生成</b><i>Gemini API</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>根拠を示す</i></span><span class="flow__box"><b>回答を表示</b><i>根拠の概念も明示</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>さらに</i></span><span class="flow__box"><b>概念を掘り下げる</b><i>カテゴリからも探せる</i></span></li>
+            </ol>
+          </details>
 
         <!-- 07: aura. -->
         <article class="work work--right reveal" aria-labelledby="w07">
@@ -413,20 +468,29 @@
               <a class="btn btn--primary" href="https://aura-profile-omega.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">aura.を開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>MBTIタイプを選択</li>
                 <li>どうぶつタイプ・血液型など追加の診断結果を入力（任意）</li>
                 <li>AIが分析し、オーラカードを生成</li>
                 <li>カードを画像として保存・シェア</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="aura-profile" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">診断の結果をいくつか選ぶと、AIがそれらを一つにまとめ、持ち歩ける「オーラカード」にします。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>利用者</b><i>登録不要</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>タイプ選択</i></span><span class="flow__box"><b>STEP 1</b><i>必須</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>任意で追加</i></span><span class="flow__box"><b>STEP 2</b><i>任意・足すほど深くなる</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>送信</i></span><span class="flow__box"><b>選んだ結果を送る</b><i>/api/analyze</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>統合を依頼</i></span><span class="flow__box"><b>称号とオーラを決める</b><i>Gemini API</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>結果を描画</i></span><span class="flow__box"><b>オーラカード</b><i>カードのレベルが決まる</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>画像に変換</i></span><span class="flow__box"><b>保存・シェア</b><i>html-to-image</i></span></li>
+            </ol>
+          </details>
 
         <!-- 08: バリアフリー乗換ガイド（デモ）
              ↑ 新しい公開アプリはこの作品の上に追加してください
@@ -446,20 +510,30 @@
               <a class="btn btn--primary" href="https://barrierfree-transfer.pages.dev/" target="_blank" rel="noopener noreferrer" data-cursor="DEMO">バリアフリー乗換ガイドのデモを見る<span class="btn__arrow" aria-hidden="true">↗</span></a>
             </div>
             <details class="work__more">
-              <summary>使い方・コメント</summary>
+              <summary>使い方</summary>
               <ol class="work__steps">
                 <li>出発駅・到着駅を選んでルートを表示</li>
                 <li>エレベーター最寄りの号車と乗換ルートを確認</li>
                 <li>確信度バッジ（確実／推定／要確認）で情報の確度を把握</li>
                 <li>EV運休時は迂回ルート・保安員介助の手順を参照</li>
               </ol>
-              <div class="comments">
-                <button class="comments__btn" type="button" data-term="barrierfree-transfer" aria-expanded="false">コメントを表示</button>
-                <div class="comments__body" hidden></div>
-              </div>
             </details>
           </div>
         </article>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">出発駅と到着駅を選ぶと、エレベーターに近い号車と乗換ルートを示します。確かな情報だけを号車案内に使います。</p>
+            <p class="flow__caveat">収録2ルートのデモ版です。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>利用者</b><i>車椅子 / ベビーカー / ゆっくり</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>駅を選ぶ</i></span><span class="flow__box"><b>検索画面</b><i>React + Vite</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>重みづけ</i></span><span class="flow__box"><b>探索の条件</b><i>乗換・段差を嫌う度合い</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>探索</i></span><span class="flow__box"><b>経路を探索</b><i>駅と路線の組・段差も加算</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>設備を照合</i></span><span class="flow__box"><b>設備データ</b><i>エレベーター位置</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>当日の情報</i></span><span class="flow__box"><b>当日の状況</b><i>ODPT都営／東京都</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>確信度を付与</i></span><span class="flow__box"><b>号車とルート</b><i>確実 / 推定 / 要確認</i></span></li>
+            </ol>
+          </details>
       </div>
 
       <!-- Coming Soon -->
