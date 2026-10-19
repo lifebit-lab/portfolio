@@ -97,6 +97,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .progress {
   position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60;
+  pointer-events: none;
   background: var(--lime);
   transform-origin: 0 50%;
   transform: scaleX(var(--p));
@@ -182,6 +183,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* 画面端の補助情報 */
 .edge--left {
   position: fixed; left: calc(var(--gutter) / 2 - 6px); bottom: 32px; z-index: 40;
+  pointer-events: none;
   writing-mode: vertical-rl; transform: rotate(180deg);
   font-family: var(--f-mono); font-size: 0.625rem; letter-spacing: .2em;
   color: var(--text-3);
@@ -189,14 +191,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .rail {
   position: fixed; right: calc(var(--gutter) / 2 - 10px); top: 50%; z-index: 40;
   transform: translateY(-50%);
+  pointer-events: none;            /* 余白が本文のクリックを奪わないように */
 }
 .rail ol { display: flex; flex-direction: column; gap: 14px; }
 .rail__link {
-  display: flex; align-items: center; gap: 8px; flex-direction: row-reverse;
+  position: relative; pointer-events: auto;
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
   font-family: var(--f-mono); font-size: 0.625rem; color: var(--text-3);
   transition: color .3s;
 }
+/* ラベルは浮かせる。幅を占有させると当たり判定が本文側へ伸びて誤操作になる */
 .rail__link span {
+  position: absolute; right: 100%; margin-right: 8px;
+  white-space: nowrap; pointer-events: none;
+  padding: 2px 6px; background: var(--ink);
   opacity: 0; transform: translateX(6px);
   transition: opacity .3s, transform .3s var(--ease-out);
   letter-spacing: .12em; text-transform: uppercase;
@@ -204,7 +212,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .rail__link:hover span, .rail__link:focus-visible span { opacity: 1; transform: none; }
 .rail__link:hover, .rail__link:focus-visible { color: var(--text-1); }
 .rail__link.is-active { color: var(--lime); }
-.rail__link.is-active::before { content: ''; width: 14px; height: 1px; background: var(--lime); }
+.rail__link.is-active::before { content: ''; order: 1; width: 14px; height: 1px; background: var(--lime); }
 
 /* ===========================
    Hero
