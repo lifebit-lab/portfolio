@@ -556,8 +556,48 @@
           </details>
         </article>
 
-        <!-- 10: 家計簿PWA（停止中） -->
-        <article class="work work--right reveal" aria-labelledby="w10">
+        <!-- 10: 美術史ラボ -->
+        <article class="work work--wide reveal" aria-labelledby="w10">
+          <a class="work__visual frame" href="https://bijutsu-lab.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="OPEN">
+            <span class="frame__bar">bijutsu-lab.vercel.app</span>
+            <img src="images/bijutsu.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">10</span><span class="status status--open">OPEN · 随時調整中</span></p>
+            <h3 class="work__title" id="w10">美術史ラボ</h3>
+            <p class="work__lead">展示室を歩くように学ぶ、美術検定3級の学習室</p>
+            <p class="work__desc">カテゴリを「第◯室」と呼び、作品には表札のキャプションと通し番号を添える。美術館の情報の出し方をそのまま画面の構造にしました。作品86点・問題268問を公開中で、出典を確認できたものだけを展示しています。</p>
+            <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Zod</li><li>localStorage</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://bijutsu-lab.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">美術史ラボを開く<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方</summary>
+              <ol class="work__steps">
+                <li>「最初の展示室へ入る」から作品を見る（第1室から第39室）</li>
+                <li>作品を選び、キャプションと解説、関連作品をたどる</li>
+                <li>「学ぶ」で分野を選んで四択に答える（模擬試験は90問・60分）</li>
+                <li>「復習」で間違えた問題と、14日以上見ていない作品を見直す</li>
+              </ol>
+            </details>
+          </div>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">美術館の章立てをそのまま使い、作品を見て、問題に答え、弱い分野を測って復習へ戻します。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>受験者</b><i>美術検定3級</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>入室</i></span><span class="flow__box"><b>第1〜39室</b><i>カテゴリ＝展示室</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>見る</i></span><span class="flow__box"><b>作品と表札</b><i>86点・通し番号つき</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>出題</i></span><span class="flow__box"><b>四択問題</b><i>268問・同じ作品を続けない</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>解答を記録</i></span><span class="flow__box"><b>学習の記録</b><i>localStorage</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>分野別に集計</i></span><span class="flow__box"><b>弱い分野</b><i>20問以上で判定</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>14日で再提示</i></span><span class="flow__box"><b>復習へ戻す</b><i>誤答＋見ていない作品</i></span></li>
+            </ol>
+          </details>
+        </article>
+
+        <!-- 11: 家計簿PWA（停止中） -->
+        <article class="work work--right reveal" aria-labelledby="w11">
           <div class="work__visual work__visual--art" aria-hidden="true">
             <svg viewBox="0 0 600 400" class="art">
               <rect width="600" height="400" fill="#0d121c"/>
@@ -580,8 +620,8 @@
             <span class="work__stamp">PAUSED</span>
           </div>
           <div class="work__body">
-            <p class="work__meta"><span class="work__num">10</span><span class="status status--paused">PAUSED · 停止中</span></p>
-            <h3 class="work__title" id="w10">家計簿PWA</h3>
+            <p class="work__meta"><span class="work__num">11</span><span class="status status--paused">PAUSED · 停止中</span></p>
+            <h3 class="work__title" id="w11">家計簿PWA</h3>
             <p class="work__lead">夫婦2人で管理できる家計管理アプリ</p>
             <p class="work__desc">収支を記録し、カテゴリ別・月別グラフで支出を可視化。招待コードでパートナーと家計を共有でき、片方が入力すると、もう片方の画面にもすぐ反映されます。</p>
             <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li><li>Recharts</li></ul>
@@ -619,7 +659,7 @@
       <div class="lab">
         <p class="lab__label">IN THE LAB — 開発中</p>
         <div class="lab__grid">
-          <article class="work work--lab reveal" aria-labelledby="w11">
+          <article class="work work--lab reveal" aria-labelledby="w12">
             <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
               <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(243,245,247,.15)" stroke-width="8"/>
               <circle cx="60" cy="60" r="50" fill="none" stroke="#C8FF45" stroke-width="8" stroke-dasharray="210 400" transform="rotate(-90 60 60)"/>
@@ -627,14 +667,14 @@
               <circle cx="60" cy="60" r="34" fill="none" stroke="#9274FF" stroke-width="8" stroke-dasharray="120 400" transform="rotate(-90 60 60)"/>
             </svg>
             <div class="work__body">
-              <p class="work__meta"><span class="work__num">11</span><span class="status status--dev">COMING SOON · 開発予定</span></p>
-              <h3 class="work__title" id="w11">AIパーソナルコーチ</h3>
+              <p class="work__meta"><span class="work__num">12</span><span class="status status--dev">COMING SOON · 開発予定</span></p>
+              <h3 class="work__title" id="w12">AIパーソナルコーチ</h3>
               <p class="work__lead">AIが食事・運動をパーソナルサポート</p>
               <p class="work__desc">食事記録と目標設定をAIがサポートし、無理なく続けられる健康管理を実現するアプリを開発予定です。</p>
               <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>AI / LLM</li></ul>
             </div>
           </article>
-          <article class="work work--lab reveal" aria-labelledby="w12">
+          <article class="work work--lab reveal" aria-labelledby="w13">
             <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
               <g fill="none" stroke="rgba(243,245,247,.16)">
                 <path d="M4 104a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0"/>
@@ -651,8 +691,8 @@
               <rect x="36" y="84" width="48" height="6" rx="2" fill="#9274FF"/>
             </svg>
             <div class="work__body">
-              <p class="work__meta"><span class="work__num">12</span><span class="status status--dev">COMING SOON · 開発中</span></p>
-              <h3 class="work__title" id="w12">saeru（冴える）</h3>
+              <p class="work__meta"><span class="work__num">13</span><span class="status status--dev">COMING SOON · 開発中</span></p>
+              <h3 class="work__title" id="w13">saeru（冴える）</h3>
               <p class="work__lead">遊んで育てる、冴える毎日のパズル育成</p>
               <p class="work__desc">和柄のミニゲームで遊びながら盆栽を育てる、cozy な育成体験を開発中。気持ちよく続けられる「冴える毎日」を目指しています。</p>
               <ul class="work__stack" role="list"><li>React</li><li>Vite</li><li>TypeScript</li><li>PWA</li></ul>
