@@ -1,0 +1,40 @@
+{
+  "listed": {
+    "aura-profile": "01 aura.",
+    "noctave": "02 Noctave",
+    "okuriba": "03 Okuriba",
+    "picnic-shade": "04 木陰ピクニック",
+    "barrierfree-transfer": "05 バリアフリー乗換ガイド（デモ）",
+    "medical-exam-pwa": "06 医療経営士試験対策PWA",
+    "stock-compass-ai": "07 StockAIコンパス",
+    "aurora-memoria": "08 Aurora Memoria",
+    "business-philosophy-app": "09 哲学ビジネス相談室（随時調整中）",
+    "bijutsu-lab": "10 美術史ラボ（随時調整中）",
+    "household-pwa": "11 家計簿PWA（停止中）",
+    "ai-diet-coach": "12 AIパーソナルコーチ（開発中）",
+    "saeru": "13 saeru（開発中）"
+  },
+  "ignore": [
+    "portfolio",
+    "affiliate-media",
+    "short_video_creator",
+    "claude-line-bot"
+  ],
+  "lastCommit": {
+    "bijutsu-lab": "2026-11-02T19:34:27+09:00",
+    "barrierfree-transfer": "2026-10-28T07:41:56+09:00",
+    "dice-atlas": "2026-10-28T07:39:18+09:00",
+    "picnic-shade": "2026-10-22T07:14:34+09:00",
+    "noctave": "2026-10-18T18:38:08+09:00",
+    "aura-profile": "2026-09-12T06:43:49+09:00",
+    "okuriba": "2026-09-05T16:51:02+09:00",
+    "stretch-5min": "2026-08-08T14:57:03+09:00",
+    "ai-diet-coach": "2026-06-20T05:24:03+09:00",
+    "stock-compass-ai": "2026-06-19T22:11:17+09:00",
+    "medical-exam-pwa": "2026-06-18T22:11:41+09:00",
+    "aurora-memoria": "2026-06-13T23:57:41+09:00",
+    "business-philosophy-app": "2026-06-13T06:29:33+09:00",
+    "household-pwa": "2026-05-24T16:59:32+09:00"
+  },
+  "lastRun": "2026-11-02T11:50:24.792Z"
+}

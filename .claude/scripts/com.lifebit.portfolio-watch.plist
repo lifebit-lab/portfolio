@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.lifebit.portfolio-watch</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/node</string>
+    <string>/Users/shimo/projects/portfolio/.claude/scripts/weekly-check.mjs</string>
+  </array>
+
+  <!-- 毎週月曜 9:00。スリープ等で逃した場合は、次に起きたときに実行される -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shimo/projects/portfolio/.claude/temp/weekly-check.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shimo/projects/portfolio/.claude/temp/weekly-check.err</string>
+</dict>
+</plist>
