@@ -10,9 +10,10 @@
     "aurora-memoria": "08 Aurora Memoria",
     "business-philosophy-app": "09 哲学ビジネス相談室（随時調整中）",
     "bijutsu-lab": "10 美術史ラボ（随時調整中）",
-    "household-pwa": "11 家計簿PWA（停止中）",
-    "ai-diet-coach": "12 AIパーソナルコーチ（開発中）",
-    "saeru": "13 saeru（開発中）"
+    "dice-atlas": "11 DICE ATLAS",
+    "household-pwa": "12 家計簿PWA（停止中）",
+    "ai-diet-coach": "13 AIパーソナルコーチ（開発中）",
+    "saeru": "14 saeru（開発中）"
   },
   "ignore": [
     "portfolio",

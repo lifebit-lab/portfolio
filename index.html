@@ -596,8 +596,48 @@
           </details>
         </article>
 
-        <!-- 11: 家計簿PWA（停止中） -->
-        <article class="work work--right reveal" aria-labelledby="w11">
+        <!-- 11: DICE ATLAS -->
+        <article class="work work--left reveal" aria-labelledby="w11">
+          <a class="work__visual frame" href="https://dice-atlas.pages.dev/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" data-cursor="PLAY">
+            <span class="frame__bar">dice-atlas.pages.dev</span>
+            <img src="images/dice-atlas.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+          </a>
+          <div class="work__body">
+            <p class="work__meta"><span class="work__num">11</span><span class="status status--open">OPEN · 公開中</span></p>
+            <h3 class="work__title" id="w11">DICE ATLAS</h3>
+            <p class="work__lead">振ったダイスが、そのまま地図になる</p>
+            <p class="work__desc">ダイスの出目で星座の航路を盤面に刻み、星霊獣を召喚して敵の星核を砕くローグライク。出目は航路・召喚・攻撃などの資源になり、無駄になる目がありません。乱数はシード付きで再現できるため、「今日の星図」では全員が同じ盤面に挑めます。星霊獣30体・星遺物20種、1ラン50〜70分。</p>
+            <ul class="work__stack" role="list"><li>React</li><li>TypeScript</li><li>Vite</li><li>PixiJS</li><li>Cloudflare Pages</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--primary" href="https://dice-atlas.pages.dev/" target="_blank" rel="noopener noreferrer" data-cursor="PLAY">DICE ATLASを遊ぶ<span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <details class="work__more">
+              <summary>使い方</summary>
+              <ol class="work__steps">
+                <li>「チュートリアル」で基本の流れをつかむ（初回推奨）</li>
+                <li>ダイス6個から3個を選んで振る（1回だけ振り直せる）</li>
+                <li>「航路」の出目で星座を描き、自分の道を敵へ繋げる</li>
+                <li>星霊獣を召喚して進軍し、敵の星核の封印3つを砕く</li>
+              </ol>
+            </details>
+          </div>
+          <details class="work__more work__flow">
+            <summary>仕組み</summary>
+            <p class="flow__summary">出目を「資源」として扱い、航路を描く・召喚する・攻めるのすべてに使い道があります。</p>
+            <ol class="flow">
+              <li class="flow__step"><span class="flow__box"><b>遊ぶ人</b><i>6個から3個を選ぶ</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>振る</i></span><span class="flow__box"><b>出目</b><i>1回だけ振り直せる</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>盤面に刻む</i></span><span class="flow__box"><b>星座の航路</b><i>自分の道に繋げる</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>紋章を貯める</i></span><span class="flow__box"><b>星霊獣を召喚</b><i>30体</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>道を進軍</i></span><span class="flow__box"><b>星核を攻撃</b><i>封印3つで勝ち</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>勝つたび強化</i></span><span class="flow__box"><b>ダイス面・星遺物</b><i>20種</i></span></li>
+              <li class="flow__step"><span class="flow__arrow"><i>次の宙域へ</i></span><span class="flow__box"><b>最深部をめざす</b><i>3星域×6宙域</i></span></li>
+            </ol>
+          </details>
+        </article>
+
+        <!-- 12: 家計簿PWA（停止中） -->
+        <article class="work work--right reveal" aria-labelledby="w12">
           <div class="work__visual work__visual--art" aria-hidden="true">
             <svg viewBox="0 0 600 400" class="art">
               <rect width="600" height="400" fill="#0d121c"/>
@@ -620,8 +660,8 @@
             <span class="work__stamp">PAUSED</span>
           </div>
           <div class="work__body">
-            <p class="work__meta"><span class="work__num">11</span><span class="status status--paused">PAUSED · 停止中</span></p>
-            <h3 class="work__title" id="w11">家計簿PWA</h3>
+            <p class="work__meta"><span class="work__num">12</span><span class="status status--paused">PAUSED · 停止中</span></p>
+            <h3 class="work__title" id="w12">家計簿PWA</h3>
             <p class="work__lead">夫婦2人で管理できる家計管理アプリ</p>
             <p class="work__desc">収支を記録し、カテゴリ別・月別グラフで支出を可視化。招待コードでパートナーと家計を共有でき、片方が入力すると、もう片方の画面にもすぐ反映されます。</p>
             <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li><li>Recharts</li></ul>
@@ -659,7 +699,7 @@
       <div class="lab">
         <p class="lab__label">IN THE LAB — 開発中</p>
         <div class="lab__grid">
-          <article class="work work--lab reveal" aria-labelledby="w12">
+          <article class="work work--lab reveal" aria-labelledby="w13">
             <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
               <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(243,245,247,.15)" stroke-width="8"/>
               <circle cx="60" cy="60" r="50" fill="none" stroke="#C8FF45" stroke-width="8" stroke-dasharray="210 400" transform="rotate(-90 60 60)"/>
@@ -667,14 +707,14 @@
               <circle cx="60" cy="60" r="34" fill="none" stroke="#9274FF" stroke-width="8" stroke-dasharray="120 400" transform="rotate(-90 60 60)"/>
             </svg>
             <div class="work__body">
-              <p class="work__meta"><span class="work__num">12</span><span class="status status--dev">COMING SOON · 開発予定</span></p>
-              <h3 class="work__title" id="w12">AIパーソナルコーチ</h3>
+              <p class="work__meta"><span class="work__num">13</span><span class="status status--dev">COMING SOON · 開発予定</span></p>
+              <h3 class="work__title" id="w13">AIパーソナルコーチ</h3>
               <p class="work__lead">AIが食事・運動をパーソナルサポート</p>
               <p class="work__desc">食事記録と目標設定をAIがサポートし、無理なく続けられる健康管理を実現するアプリを開発予定です。</p>
               <ul class="work__stack" role="list"><li>Next.js</li><li>TypeScript</li><li>AI / LLM</li></ul>
             </div>
           </article>
-          <article class="work work--lab reveal" aria-labelledby="w13">
+          <article class="work work--lab reveal" aria-labelledby="w14">
             <svg class="lab__art" viewBox="0 0 120 120" aria-hidden="true">
               <g fill="none" stroke="rgba(243,245,247,.16)">
                 <path d="M4 104a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0"/>
@@ -691,8 +731,8 @@
               <rect x="36" y="84" width="48" height="6" rx="2" fill="#9274FF"/>
             </svg>
             <div class="work__body">
-              <p class="work__meta"><span class="work__num">13</span><span class="status status--dev">COMING SOON · 開発中</span></p>
-              <h3 class="work__title" id="w13">saeru（冴える）</h3>
+              <p class="work__meta"><span class="work__num">14</span><span class="status status--dev">COMING SOON · 開発中</span></p>
+              <h3 class="work__title" id="w14">saeru（冴える）</h3>
               <p class="work__lead">遊んで育てる、冴える毎日のパズル育成</p>
               <p class="work__desc">和柄のミニゲームで遊びながら盆栽を育てる、cozy な育成体験を開発中。気持ちよく続けられる「冴える毎日」を目指しています。</p>
               <ul class="work__stack" role="list"><li>React</li><li>Vite</li><li>TypeScript</li><li>PWA</li></ul>
